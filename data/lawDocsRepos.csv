@@ -1,0 +1,6 @@
+country,legalSys,license,legis-wikidataID,legis-wikidataID-rel,repo-wikidataID,repo-wikidataID-rel,url-lawDocsRepository
+uk,common law,OGL,Q7888118,exact,,,http://www.legislation.gov.uk/
+br,civil law,inferring-br,,,Q10317762,exact,http://www.lexml.gov.br/
+it,civil law,inferring-it,,,Q1276282,subclass,http://eur-lex.europa.eu/n-lex/legis_it/normattiva_form_en.htm
+ge,civil law,inferring-ge,,,Q1276282,subclass,http://eur-lex.europa.eu/n-lex/legis_de/juris_form_en.htm
+eu,international,inferring-eu,Q208202,subclass,Q1276282,exact,http://europa.eu/publications/official-documents/index_en.htm
