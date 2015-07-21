@@ -1,5 +1,5 @@
-# Inferred license for Brazilian legislation &nbsp; `inferredLicense-BR`
-Version: *1.0*. &nbsp;&nbsp;&nbsp; Status of this report: *REVISION*. 
+# Inferred license for Brazilian legislation
+`inferredLicense-BR` version *1.0*. &nbsp;&nbsp;&nbsp; Status of this report: *REVISION*.
 
 ## Check list
 * Consistent with [lawDocsRepos](https://github.com/ppKrauss/openCitation/blob/master/data/lawDocsRepos.csv):
