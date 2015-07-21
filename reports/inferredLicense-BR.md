@@ -32,11 +32,12 @@ Version: *1.0*. &nbsp;&nbsp;&nbsp; Status of this report: *REVISION*.
 
 >  § 2º Cabem à administração pública, na forma da lei, a gestão da documentação governamental e as providências para franquear sua consulta a quantos dela necessitem. 
 
-Summarizing: article 5º (inciso XIV), ensure "everyone access" to information for work;  article 216 (§ 2º) states the "mandatory deductible access" (no pay for law-documents).
+Summarizing: 
+* article 5º (inciso XIV), ensure "everyone access" to information for work;
+* article 216 (§ 2º) states the "mandatory deductible access" (no pay for law-documents).
 
 
-2. [Law 9610/1998](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610): <!-- 
-   thanks to @bluechi  at https://github.com/okfn/opendefinition/issues/114#issuecomment-122265499 -->
+2. [Law 9610/1998](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610):
 
 >  Art. 8º Não são objeto de proteção como direitos autorais de que trata esta Lei:
 
@@ -62,6 +63,6 @@ The persons bellow supported the conclusions of this report,
 * ... add yours!...
 
 Persons that indirectally supported, as theirs manifestarion was used during elaboration of this report,
-* [bluechi](https://github.com/bluechi) v1.0 with [1](https://github.com/okfn/opendefinition/issues/114#issuecomment-122265499).
+* [bluechi](https://github.com/bluechi) v1.0 with [[1]](https://github.com/okfn/opendefinition/issues/114#issuecomment-122265499).
 
 
