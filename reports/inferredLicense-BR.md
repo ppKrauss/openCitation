@@ -59,12 +59,12 @@ Exclude legislative and juridic documents, but not all all works created by the 
 
 The default *"inferred license"* of Brazilian law-documents is something similar to [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
 
-### Support conclusion
-The persons bellow supported the conclusions of this report,
+### Endorsed the conclusion
+The persons bellow endorsed the conclusions of this report,
 * [ppKrauss](https://github.com/ppKrauss) v1.0.
 * ... add yours!...
 
-Persons that indirectally supported, as theirs manifestarion was used during elaboration of this report,
+Persons that indirectly endorsed, as theirs manifestation was used during elaboration of this report,
 * [bluechi](https://github.com/bluechi) v1.0 with [[1]](https://github.com/okfn/opendefinition/issues/114#issuecomment-122265499).
-
+* ... person and URL of manifestation ...
 
