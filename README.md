@@ -1,5 +1,5 @@
-# openCitation
-Mini-framework for check opennes of contents cited by open contents.
+# Open Coherence
+Mini-framework for check opennes-coherence of contents cited by open contents.
 
 This project, focusing on legal and scientific contents, offers tools and datasets for describe open contents with certainty of openness at cited documents, and tools for measure of percentage of cited materials that are open, in contexts without this certainty.
 
