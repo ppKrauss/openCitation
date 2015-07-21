@@ -1,6 +1,8 @@
-country,legalSys,license,legis-wikidataID,legis-wikidataID-rel,repo-wikidataID,repo-wikidataID-rel,url-lawDocsRepository
-uk,common law,OGL,Q7888118,exact,,,http://www.legislation.gov.uk/
-br,civil law,inferring-br,,,Q10317762,exact,http://www.lexml.gov.br/
-it,civil law,inferring-it,,,Q1276282,subclass,http://eur-lex.europa.eu/n-lex/legis_it/normattiva_form_en.htm
-ge,civil law,inferring-ge,,,Q1276282,subclass,http://eur-lex.europa.eu/n-lex/legis_de/juris_form_en.htm
-eu,international,inferring-eu,Q208202,subclass,Q1276282,exact,http://europa.eu/publications/official-documents/index_en.htm
+country,legalSys,BerneConv,license,legis-wikidataID,legis-wikidataID-rel,repo-wikidataID,repo-wikidataID-rel,url-lawDocsRepository
+br,civil law,yes,inferredLicense-BR,,,Q10317762,exact,http://www.lexml.gov.br/
+eu,international,yes,inferredLicense-EU,Q208202,subclass,Q1276282,exact,http://europa.eu/publications/official-documents/index_en.htm
+ge,civil law,yes,inferredLicense-GE,,,Q1276282,subclass,http://eur-lex.europa.eu/n-lex/legis_de/juris_form_en.htm
+il,mix,yes,inferredLicense-IL,Q1565153,extact,Q133396,subclass,http://www.knesset.gov.il/laws
+it,civil law,yes,inferredLicense-IT,,,Q1276282,subclass,http://eur-lex.europa.eu/n-lex/legis_it/normattiva_form_en.htm
+uk,common law,yes,OGL,Q7888118,exact,,,http://www.legislation.gov.uk/
+us,common law,yes,inferredLicense-US,Q692218,exact,Q7079379,exact,http://uscode.house.gov/

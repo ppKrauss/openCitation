@@ -131,6 +131,11 @@
             "type": "string"
           },
           {
+            "name": "BerneConv",
+            "description":"(perhaps redundant information) yes when country is a signatary of Berne Convention",
+            "type": "string"
+          },
+          {
             "name": "license",
             "description":"key (abbrev name) of the explicit or inferred license",
             "type": "string"
