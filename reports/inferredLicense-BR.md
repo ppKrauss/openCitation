@@ -33,8 +33,8 @@ Version: *1.0*. &nbsp;&nbsp;&nbsp; Status of this report: *REVISION*.
 >  § 2º Cabem à administração pública, na forma da lei, a gestão da documentação governamental e as providências para franquear sua consulta a quantos dela necessitem. 
 
 Summarizing: 
-* article 5º (inciso XIV), ensure "everyone access" to information for work;
-* article 216 (§ 2º) states the "mandatory deductible access" (no pay for law-documents).
+* article 5th (inciso XIV), ensure "everyone access" to information for work;
+* article 216 (§ 2nd) states the "mandatory deductible access" (no pay for law-documents).
 
 
 **2.** [Law 9610/1998](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610):
@@ -47,7 +47,7 @@ Summarizing:
 
 ([Translated as](http://www.wipo.int/wipolex/en/details.jsp?id=514))
 
->> Art. 8º The following shall be excluded from copyright protection within the meaning of this Law:
+>> Art. 8th The following shall be excluded from copyright protection within the meaning of this Law:
 
 >> ...
 
