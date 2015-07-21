@@ -4,11 +4,11 @@ Version: *1.0*. &nbsp;&nbsp;&nbsp; Status of this report: *REVISION*.
 ## Check list
 * Consistent with [lawDocsRepos](https://github.com/ppKrauss/openCitation/blob/master/data/lawDocsRepos.csv):
 
- * Legal system: Civil law
+ * Legal system: *Civil law*
 
- * Berne Convention: yes
+ * Berne Convention: *yes*
 
- * Official license: no
+ * Official license: *no*
 
  * Official law-documents repository: http://www.lexml.gov.br
 
@@ -33,8 +33,8 @@ Version: *1.0*. &nbsp;&nbsp;&nbsp; Status of this report: *REVISION*.
 >  § 2º Cabem à administração pública, na forma da lei, a gestão da documentação governamental e as providências para franquear sua consulta a quantos dela necessitem. 
 
 Summarizing: 
-* article 5th (inciso XIV), ensure "everyone access" to information for work;
-* article 216 (§ 2nd) states the "mandatory deductible access" (no pay for law-documents).
+* Article 5th (inciso XIV), ensure "everyone access" to information for work;
+* Article 216 (§ 2nd) states the "mandatory deductible access" (no pay for law-documents).
 
 
 **2.** [Law 9610/1998](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610):
