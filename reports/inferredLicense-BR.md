@@ -45,6 +45,8 @@ Summarizing:
 
 > IV - os textos de tratados ou convenções, leis, decretos, regulamentos, decisões judiciais e demais atos oficiais;
 
+([Translated as](http://www.wipo.int/wipolex/en/text.jsp?file_id=125393))
+
 >> Art. 8º The following shall be excluded from copyright protection within the meaning of this Law:
 
 >> ...
