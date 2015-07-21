@@ -41,8 +41,8 @@ Each contry that not have an explicit *official license* defined for its law-doc
 
 Report summary:
 
-* `./reports/inferred-br.csv` - Inferred licenses for Brazilian legislation and its law-documents.
-* ...
+* `./reports/inferredLicense-BR.csv` - Inferred licenses for Brazilian legislation and its law-documents.
+* ... please navigate and check where you can collaborate ...
 
 ### Methodology
 After `lawDocsRepos` and `lawDocs` sheets  are filled, and  demand on a *inferred license* confirmed:
@@ -51,7 +51,7 @@ After `lawDocsRepos` and `lawDocs` sheets  are filled, and  demand on a *inferre
 
 2. Fill the `??1` placeholders with the corresponding `lawDocsRepos` fields.
 
-3. Fill the rest of the report to be publish it as a "DRAFT" and start a collaborative work at *git*.
+3. Fill the rest of the report (use ex. `inferredLicense-BR.md` as reference model) to be publish it as a "DRAFT" and start a collaborative work at *git*.
 
 4. Fill the section "Endorsed the conclusion" when draft can change the status, making the first change from "draft" to "revision".
 
