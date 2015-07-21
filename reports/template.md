@@ -1,5 +1,5 @@
 # Inferred license for ?? legislation &nbsp; `inferredLicense-??1`
-Version: *1.0*. &nbsp; Status of this report: *DRAFT*. 
+Version: *1.0*. &nbsp;&nbsp;&nbsp; Status of this report: *DRAFT*. 
 
 ## Check list
 
