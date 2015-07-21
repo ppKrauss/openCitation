@@ -46,13 +46,20 @@ Report summary:
 
 ### Methodology
 After `lawDocsRepos` and `lawDocs` sheets  are filled, and  demand on a *inferred license* confirmed:
-# Make a copy of `./reports/template.md` named `inferredLicense-XX.md` where `XX` is the country code (as *country* at `lawDocsRepos`);
-# Fill the `??1` placeholders with the corresponding `lawDocsRepos` fields.
-# Fill the rest of the report to be publish it as a "DRAFT" and start a collaborative work at *git*.
-# Fill the section "Endorsed the conclusion" when draft can change the status, making the first change from "draft" to "revision".
-# Change the status from "revision" to "accepted" when there are at least 5 endorsements.
-# Change the version (ex. from 1.0 to 1.1) when make updates with only minor text revision.
-# Change the version (ex. from 1 to 2) when updates change something at "Conclusion" section.
+
+1. Make a copy of `./reports/template.md` named `inferredLicense-XX.md` where `XX` is the country code (as *country* at `lawDocsRepos`);
+
+2. Fill the `??1` placeholders with the corresponding `lawDocsRepos` fields.
+
+3. Fill the rest of the report to be publish it as a "DRAFT" and start a collaborative work at *git*.
+
+4. Fill the section "Endorsed the conclusion" when draft can change the status, making the first change from "draft" to "revision".
+
+5. Change the status from "revision" to "accepted" when there are at least 5 endorsements.
+
+6. Change the version (ex. from 1.0 to 1.1) when make updates with only minor text revision.
+
+7. Change the version (ex. from 1 to 2) when updates change something at "Conclusion" section.
 
 ## ...Planed tools...
 ...
