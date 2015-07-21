@@ -2,8 +2,16 @@
 Version: *1.0*. &nbsp; Status of this report: *REVISION*. 
 
 ## Check list
-* Berne Convention: yes
-* Official license: no
+* Consistent with [lawDocsRepos](https://github.com/ppKrauss/openCitation/blob/master/data/lawDocsRepos.csv):
+
+ * Legal system: Civil law
+
+ * Berne Convention: yes
+
+ * Official license: no
+
+ * Official law-documents repository: http://www.lexml.gov.br
+
 * Copyright laws: http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610
 
 ## Extracts and interpretations

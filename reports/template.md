@@ -5,11 +5,13 @@ Version: *1.0*. &nbsp; Status of this report: *DRAFT*.
 
 * Consistent with [lawDocsRepos](https://github.com/ppKrauss/openCitation/blob/master/data/lawDocsRepos.csv):
 
+ * Legal system: ??1 civil law / common law / ...
+
  * Berne Convention: ??1 yes/not
 
  * Official license: ??1 yes/not
 
- * Official law-doc repo: ??1 URL
+ * Official law-documents repository: ??1 URL
 
 * Copyright laws: ?? URLs
 

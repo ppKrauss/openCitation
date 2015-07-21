@@ -2,10 +2,17 @@
 Status of this report: *DRAFT*.
 
 ## Check list
+* Consistent with [lawDocsRepos](https://github.com/ppKrauss/openCitation/blob/master/data/lawDocsRepos.csv):
 
-* Berne Convention: yes
-* Official license: no
-* Copyright laws: ??
+ * Legal system: Common law
+
+ * Berne Convention: yes
+
+ * Official license: no
+
+ * Official law-documents repository: http://uscode.house.gov/
+
+* Copyright laws: ?? URLs
 
 ## Extracts and interpretations
 
