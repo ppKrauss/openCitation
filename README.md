@@ -14,12 +14,40 @@ In both (sci-docs and law-docs) the content is published by an authority, like a
 
 Other versions (ex. draft, compiled or commented) or formats, like the printed version, may be not preserve openness, as its reader must pay per some added value to the official digital content. The license of this "other version" must not be confused with the license of the official digital version. Only official versions (of law-docs and sci-docs) possess legal probative value.
 
+### Openness degree
+The characterization of the "openness" of a document (or a set of documents as collection or repository) can be formalized by the following procedure (simplifyed by the [licenses table](./data/licenses.csv)):
+
+1. check license-type of the document;
+2. check the most similar canonical-license-type (the CC-types illustred below);
+3. use the `opennessDegree` as an numeric indicator.
+
+![The opennes degree](./reports/imgs/openessDeg-CC-licenses-short.png "The opennes degree")
+
+The "openness degree" is illustred by the [CC licenses ordering](https://commons.wikimedia.org/wiki/File:Ordering_of_Creative_Commons_licenses_from_most_to_least_open.png), but can be applied with the set of all [OpenDefinition-conformant licenses](http://opendefinition.org/licenses/). 
+
+### Coherence in of law-doc collections
+When a collection have an explicit license, like [UK](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/) or [GE](https://www.govdata.de/dl-de/by-2-0) official law-doc collections, it is easy to audit the coherence between observed openness of each law-doc in the country's repository, and the country's license for that collection.
+
+When there are no explicit license: we can build a "fake license" (see [reports](./reports)) to use in the same way.
+
+### Coherence in of sci-doc collections
+
+When the repository obligates that each document express its license, like [PMC](http://www.ncbi.nlm.nih.gov/pmc/about/copyright/), or offers a open default license, like [SciELO](http://blog.scielo.org/en/2014/08/29/scielo-participates-in-the-global-coalition-supporting-creative-commons-licenses-to-access-journal-articles/), it is easy to audit the coherence between observed openness of each sci-doc in the repository, and the country's license for that collection.
+
+(scientific documents not need "fake license").
+
+### Citation coherence
+A complementar indicator of openness, [under discussion](https://github.com/okfn/opendefinition/wiki/Citation-alike-clauses-of-open-licenses-for-law#user-content-the-citation-alike-clause-and-observance), is checking the observance of the same or superior degree of openess in the cited document.
+<!---
+ ... When all cited documents are open,  **When it occurs, we can say that the document citations are *coherent* with its license**.
+OLD DRAFT, lixo:
 ### Choice and observance of openness degree
 Both writers, sci-doc author or legislator, can influency the choice of cited documents. If the "contract" between writer and authority not states any thing about citation, the writer can cite copyrighted documents. But the authorities, of legal system or sci-journal, they can (is possible to) obligate some kind of observance to preserve openness in citations, that is: a cited document must use same license or a license with more openness.
-
-![The opennes degree](./reports/imgs/Ordering-CC-licenses-170px.png "The opennes degree")
-
-The "openness degree" is illustred by the [CC licenses ordering](https://commons.wikimedia.org/wiki/File:Ordering_of_Creative_Commons_licenses_from_most_to_least_open.png). A cited document can have most open license, or a license with the same degree. **When it occurs, we can say that the document citations are *coherent* with its license**.
+..fig...
+The "openness degree" is illustred by the CC licenses ordering. A cited document can have most open license, or a license with the same degree. **When it occurs, we can say that the document citations are *coherent* with its license**.
+-->
+## Objective
+The aim of this project is to subsidies the characterization of "openess coherence" in repositories and collections. 
 
 ## Datasets 
 [OKFN Dataset standards](https://github.com/datasets) was adopted in this project:
