@@ -47,7 +47,7 @@ Both writers, sci-doc author or legislator, can influency the choice of cited do
 The "openness degree" is illustred by the CC licenses ordering. A cited document can have most open license, or a license with the same degree. **When it occurs, we can say that the document citations are *coherent* with its license**.
 -->
 ## Objective
-The aim of this project is to subsidies the characterization of "openess coherence" in repositories and collections. 
+The aim of this project is to offer a practical and theoretical *framework* (at least a proof of concept) to subsidise the characterization of "openness coherence" in repositories and collections, of scientific and legislative documents.
 
 ## Datasets 
 [OKFN Dataset standards](https://github.com/datasets) was adopted in this project:
