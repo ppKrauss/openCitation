@@ -17,6 +17,8 @@ Other versions (ex. draft, compiled or commented) or formats, like the printed v
 ### Choice and observance of openness degree
 Both writers, sci-doc author or legislator, can influency the choice of cited documents. If the "contract" between writer and authority not states any thing about citation, the writer can cite copyrighted documents. But the authorities, of legal system or sci-journal, they can (is possible to) obligate some kind of observance to preserve openness in citations, that is: a cited document must use same license or a license with more openness.
 
+![The opennes degree](./reports/imgs/Ordering-CC-licenses-170px.png "The opennes degree")
+
 The "openness degree" is illustred by the [CC licenses ordering](https://commons.wikimedia.org/wiki/File:Ordering_of_Creative_Commons_licenses_from_most_to_least_open.png). A cited document can have most open license, or a license with the same degree. **When it occurs, we can say that the document citations are *coherent* with its license**.
 
 ## Datasets 
