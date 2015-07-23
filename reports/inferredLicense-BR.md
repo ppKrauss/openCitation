@@ -1,5 +1,5 @@
 # Inferred license for Brazilian legislation
-`inferredLicense-BR` version *1.0*. &nbsp;&nbsp;&nbsp; Status of this report: *REVISION*.
+`inferredLicense-BR` version *1.1*. &nbsp;&nbsp;&nbsp; Status of this report: *REVISION*.
 
 ## Check list
 * Consistent with [lawDocsRepos](https://github.com/ppKrauss/openCitation/blob/master/data/lawDocsRepos.csv):
@@ -45,7 +45,7 @@ Summarizing:
 
 > IV - os textos de tratados ou convenções, leis, decretos, regulamentos, decisões judiciais e demais atos oficiais;
 
-([Translated as](http://www.wipo.int/wipolex/en/details.jsp?id=514))
+([Translated as](http://english.tse.jus.br/arquivos/federal-constitution))
 
 >> Art. 8th The following shall be excluded from copyright protection within the meaning of this Law:
 
@@ -55,9 +55,18 @@ Summarizing:
 
 Exclude legislative and juridic documents, but not all all works created by the federal government
 
+### Special clause
+In all reproductions of brazilian laws, there are a well-known red phrase,
+
+> Este texto não substitui o original publicado no Diário Oficial
+
+>  > This text does not substitute the original published in the Official Gazette
+
+So, we can infer  that it is an license clause, an exigence for  the reproductions of law texts. (PLEASE we need source about this theme) 
+
 ## Conclusion
 
-The default *"inferred license"* of Brazilian law-documents is something similar to [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
+The default *"inferred license"* of Brazilian law-documents is something similar to [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode),  with an special clause, like an attribution clause, enforcing the use of the red phrase in the distributed copies.
 
 ### Endorsed the conclusion
 The persons bellow endorsed the conclusions of this report,
