@@ -1,9 +1,17 @@
-# Inferred license for Israeli legislation &nbsp; `inferredLicense-IL`
-Status of this report: *DRAFT*.
+# Inferred license for Israeli legislation
+`inferredLicense-IL` version *1.0*. &nbsp;&nbsp;&nbsp; Status of this report: *DRAFT*.
 
 ## Check list
-* Berne Convention: ??
-* Official license: no
+* Consistent with [lawDocsRepos](https://github.com/ppKrauss/openCitation/blob/master/data/lawDocsRepos.csv):
+
+ * Legal system: *mix*
+
+ * Berne Convention: *yes*
+
+ * Official license: *no*
+
+ * Official law-documents repository:	http://www.knesset.gov.il/laws
+
 * Copyright laws: ??
 
 ## Extracts and interpretations
