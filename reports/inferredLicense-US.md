@@ -1,14 +1,14 @@
-# Inferred license for US legislation &nbsp; `inferredLicense-US`
-Status of this report: *DRAFT*.
+# Inferred license for USA legislation
+`inferredLicense-US` version *1.0*. &nbsp;&nbsp;&nbsp; Status of this report: *DRAFT*.
 
 ## Check list
 * Consistent with [lawDocsRepos](https://github.com/ppKrauss/openCitation/blob/master/data/lawDocsRepos.csv):
 
- * Legal system: Common law
+ * Legal system: *Common law*
 
- * Berne Convention: yes
+ * Berne Convention: *yes*
 
- * Official license: no
+ * Official license: *no*
 
  * Official law-documents repository: http://uscode.house.gov/
 
