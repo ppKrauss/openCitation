@@ -14,30 +14,37 @@ In both (sci-docs and law-docs) the content is published by an authority, like a
 
 Other versions (ex. draft, compiled or commented) or formats, like the printed version, may be not preserve openness, as its reader must pay per some added value to the official digital content. The license of this "other version" must not be confused with the license of the official digital version. Only official versions (of law-docs and sci-docs) possess legal probative value.
 
-### Openness degree
+### Openness degree of a license
 The characterization of the "openness" of a document (or a set of documents as collection or repository) can be formalized by the following procedure (simplifyed by the [licenses table](./data/licenses.csv)):
 
 1. check license-type of the document;
 2. check the most similar canonical-license-type (the CC-types illustred below);
-3. use the `opennessDegree` as an numeric indicator.
+3. use the `opennessDegree` as "openness numeric indicator".
 
 ![The opennes degree](./reports/imgs/openessDeg-CC-licenses-short.png "The opennes degree")
 
-The "openness degree" is illustred by the [CC licenses ordering](https://commons.wikimedia.org/wiki/File:Ordering_of_Creative_Commons_licenses_from_most_to_least_open.png), but can be applied with the set of all [OpenDefinition-conformant licenses](http://opendefinition.org/licenses/). 
+The *openness degree* is illustred here by the [CC licenses ordering](https://commons.wikimedia.org/wiki/File:Ordering_of_Creative_Commons_licenses_from_most_to_least_open.png), but it can be enhanced with more canonical licenses, taken from [OpenDefinition-conformant licenses](http://opendefinition.org/licenses/). 
 
 ### Coherence in of law-doc collections
-When a collection have an explicit license, like [UK](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/) or [GE](https://www.govdata.de/dl-de/by-2-0) official law-doc collections, it is easy to audit the coherence between observed openness of each law-doc in the country's repository, and the country's license for that collection.
+When a collection have an explicit license, like [UK](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/) or [GE](https://www.govdata.de/dl-de/by-2-0) official law-doc collections, it is easy to audit: check if the license is in fact respected, comparing the coherence between observed openness of each law-doc in the country's repository, and the country's license for that collection.
 
-When there are no explicit license: we can build a "fake license" (see [reports](./reports)) to use in the same way.
+When there are no explicit license: we can interpret and build a "fake license" (**see [reports](./reports)**) to use in the same way.
 
 ### Coherence in of sci-doc collections
 
-When the repository obligates that each document express its license, like [PMC](http://www.ncbi.nlm.nih.gov/pmc/about/copyright/), or offers a open default license, like [SciELO](http://blog.scielo.org/en/2014/08/29/scielo-participates-in-the-global-coalition-supporting-creative-commons-licenses-to-access-journal-articles/), it is easy to audit the coherence between observed openness of each sci-doc in the repository, and the country's license for that collection.
+When the repository obligates that each document express its license, as [PubMed Central](http://www.ncbi.nlm.nih.gov/pmc/about/copyright/), or offers a default-license, like [SciELO](http://blog.scielo.org/en/2014/08/29/scielo-participates-in-the-global-coalition-supporting-creative-commons-licenses-to-access-journal-articles/), it is easy to audit the coherence between observed openness of each sci-doc in the repository.
 
-(scientific documents not need "fake license").
+(scientific documents of open repositories not need interpreted "fake license").
 
 ### Citation coherence
-A complementar indicator of openness, [under discussion](https://github.com/okfn/opendefinition/wiki/Citation-alike-clauses-of-open-licenses-for-law#user-content-the-citation-alike-clause-and-observance), is checking the observance of the same or superior degree of openess in the cited document.
+A complementar indicator of openness, [under discussion](https://github.com/okfn/opendefinition/wiki/Citation-alike-clauses-of-open-licenses-for-law#user-content-the-citation-alike-clause-and-observance), is checking the observance of the same or superior *openess degree* in the cited document. When cited document have less *degree*,  we can say that the citation is not coherent.
+
+In both, sci-docs and law-docs, may be difficult  cite only open documents... The "context of citation" may determine a *weighting* of relevance:
+
+* in law-docs a citation that blocks the undertstand of an obligation, is really a problem; while a citation that is only a complementar explanation, or it not determinates an obligation, not blocks (the undertstand of an obligation). 
+
+* in sci-docs a citation that is the unique to check scientific merit of a central ideia of the article, is more important than other one that  offers alternatives, or is about a secondary subject.
+
 <!---
  ... When all cited documents are open,  **When it occurs, we can say that the document citations are *coherent* with its license**.
 OLD DRAFT, lixo:
