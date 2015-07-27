@@ -37,13 +37,15 @@ When the repository obligates that each document express its license, as [PubMed
 (scientific documents of open repositories not need interpreted "fake license").
 
 ### Citation coherence
-A complementar indicator of openness, [under discussion](https://github.com/okfn/opendefinition/wiki/Citation-alike-clauses-of-open-licenses-for-law#user-content-the-citation-alike-clause-and-observance), is checking the observance of the same or superior *openess degree* in the cited document. When cited document have less *degree*,  we can say that the citation is not coherent.
+A complementar indicator of openness, [under discussion](https://github.com/okfn/opendefinition/wiki/Citation-alike-clauses-of-open-licenses-for-law#user-content-the-citation-alike-clause-and-observance), is checking the observance of the same or superior *openess degree* in the cited document (when [citing external sources](https://en.wikipedia.org/wiki/Wikipedia:Citing_sources)). When cited document have less *degree*,  we can say that the citation is not coherent.
+
+In both, sci-docs and law-docs,  external complementar material (appendix, table, map, etc.) can be considered "cited document". In sci-docs there are also a [standard reference-list](http://jats.nlm.nih.gov/archiving/tag-library/1.0/n-ajd0.html) pointing to external and independent documents.  In law-docs the [legal citation analysis](https://en.wikipedia.org/wiki/Legal_citation#Legal_citation_analysis)  determinates what documents are external to the legal system and are in fact a complement of the law.
 
 In both, sci-docs and law-docs, may be difficult  cite only open documents... The "context of citation" may determine a *weighting* of relevance:
 
-* in law-docs a citation that blocks the undertstand of an obligation, is really a problem; while a citation that is only a complementar explanation, or it not determinates an obligation, not blocks (the undertstand of an obligation). 
+* in law-docs a citation that *blocks the undertstand of an obligation*, is really a problem; while a citation that is only a complementar explanation, or it not determinates an obligation, not blocks. 
 
-* in sci-docs a citation that is the unique to check scientific merit of a central ideia of the article, is more important than other one that  offers alternatives, or is about a secondary subject.
+* in sci-docs a citation that is the unique to check scientific merit of a central ideia of the article, is more important than other one that  offers (open) alternatives, or is about a secondary matter.
 
 <!---
  ... When all cited documents are open,  **When it occurs, we can say that the document citations are *coherent* with its license**.
