@@ -16,9 +16,8 @@
 
 ## Extracts and interpretations
 
-**1.** Official and direct response to the *article 2.4 (official texts)* of the Berne Convention:
-
-... no known direct response expliciting the protection-exclusion of *"official texts of a legislative, administrative and legal nature, and to official translations of such texts"*...
+**1.** Official and direct response to the *Article 2.4* of the Berne Convention, to give or not *protection to official texts*: no manifestation at the Brazilian's promulgation of accession to the Berne Convention, [Decreto Federal nº 75.699 de 1975](http://www.lexml.gov.br/urn/urn:lex:br:federal:decreto:1975-05-06;75699).
+<!-- no known direct response expliciting the protection-exclusion of *"official texts" -->
 
 **2.** [Federal Constitution of 1988](http://www.lexml.gov.br/urn/urn:lex:br:federal:constituicao:1988-10-05;1988)
 
