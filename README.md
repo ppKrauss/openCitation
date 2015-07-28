@@ -4,7 +4,7 @@ Mini-framework for check openness-coherence of contents about liceses, extension
 This project, focusing on legal and scientific contents, offers tools and datasets for describe open contents with certainty of openness and tools for measure the degreee of openess.
 
 ## Introduction
-Legal and scientific documents are typical [free contents](https://en.wikipedia.org/wiki/Free_content#Legislation), and in recent years they are stored in big digital repositoris that archives publicly accessible full-text documents in standard formats, as a form of *digital [legal deposit](https://en.wikipedia.org/wiki/Legal_deposit)*.
+Legal and scientific documents are typical [free contents](https://en.wikipedia.org/wiki/Free_content#Legislation), and in recent years they are stored in big digital repositories that archives publicly accessible full-text documents in standard formats, as a form of *digital [legal deposit](https://en.wikipedia.org/wiki/Legal_deposit)*.
 
 * Typical repositories of scientific literature (''sci-docs''): [SciELO](https://en.wikipedia.org/wiki/SciELO) and [PubMed Central](https://en.wikipedia.org/wiki/PubMed_Central). Access to contents in [XML JATS format](https://en.wikipedia.org/wiki/Journal_Article_Tag_Suite) and PDF.
 
@@ -35,7 +35,7 @@ When the repository obligates that each document express its license, as [PubMed
 (scientific documents of open repositories not need interpreted "fake license").
 
 ### Doc-extension coherence
-Some documents need an "extension", like appendix, external figures, external maps, tables, lists, databases, etc. On science literature they are [supplementary matterial](http://jats.nlm.nih.gov/archiving/tag-library/1.0/n-q6p0.html) and *commom database*; in legislation they are [attachment](http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd01/part2-specs/material/AkomaNtoso30-csd13_xsd_Element_attachment.html) (or appendix and other documental objects) that can't published in the same document's body, or that is reused by other law-docs. 
+Some documents need an "extension", like appendix, external figures, external maps, external tables, databases, etc. On science literature they are [supplementary matterial](http://jats.nlm.nih.gov/archiving/tag-library/1.0/n-q6p0.html) and *commom database*; in legislation they are [attachment](http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd01/part2-specs/material/AkomaNtoso30-csd13_xsd_Element_attachment.html) (or appendix and other documental objects) that are can't published in the same document's body structure, or that is reused by other law-docs. 
 
 As extensions are explicit parts of the document, they are not subject to "relevance" interpretation, so, they **must use the same license** tham it's document.
 
@@ -51,7 +51,7 @@ The aim of this project is to offer a practical and theoretical *framework* (at 
 
 * Show the *official collections*: via [`lawDocsRepos` dataset](./data/lawDocsRepos.csv), each contry's official law-doc repository.
 
-* Show the  *official licenses*: via [`licenses` dataset](./data/licenses.csv) list all known licenses used in official repositories, and via [`reports/inferredLicense` consensual interpretation](./reports), show the "inferred licenses" of countries that use no explicit license.
+* Show the  *official licenses*: via [`licenses` dataset](./data/licenses.csv) list all known licenses used in official repositories, and (after consensual interpretation) via [`inferredLicense` ](./reports) reports, show the "inferred licenses" of countries that use no explicit license.
 
 * *Coherence in official collections*: via [`lawDocsRepos` dataset](./data/lawDocsRepos.csv), describing official repositories, and [`lawDocs` dataset](./data/lawDocs.csv), sampling law-docs (as evidences); monitoring general cumpliance of the "expected licence" in all repository's documents. 
 
