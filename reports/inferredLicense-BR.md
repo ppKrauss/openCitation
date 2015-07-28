@@ -26,7 +26,17 @@
 
 > IV - os textos de tratados ou convenções, leis, decretos, regulamentos, decisões judiciais e demais atos oficiais;
 
+
+([Translated as](http://english.tse.jus.br/arquivos/federal-constitution))
+
+>> Art. 8th The following shall be excluded from copyright protection within the meaning of this Law:
+
+>> ...
+
+>> IV - the texts of treaties or conventions, laws, decrees, regulations, judicial decisions and other official enactments;
+
 where the exclusion from protection is exprexed by article 8, items I and IV.
+PS: exclude legislative and juridic documents, but not all all works created by the federal government.
 
 **2.** [Federal Constitution of 1988](http://www.lexml.gov.br/urn/urn:lex:br:federal:constituicao:1988-10-05;1988)
 
@@ -47,25 +57,6 @@ where the exclusion from protection is exprexed by article 8, items I and IV.
 Summarizing: 
 * Article 5th (inciso XIV), ensure "everyone access" to information for work;
 * Article 216 (§ 2nd) states the "mandatory deductible access" (no pay for law-documents).
-
-
-**3.** [Law 9610/1998](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610):
-
->  Art. 8º Não são objeto de proteção como direitos autorais de que trata esta Lei:
-
-> ...
-
-> IV - os textos de tratados ou convenções, leis, decretos, regulamentos, decisões judiciais e demais atos oficiais;
-
-([Translated as](http://english.tse.jus.br/arquivos/federal-constitution))
-
->> Art. 8th The following shall be excluded from copyright protection within the meaning of this Law:
-
->> ...
-
->> IV - the texts of treaties or conventions, laws, decrees, regulations, judicial decisions and other official enactments;
-
-Exclude legislative and juridic documents, but not all all works created by the federal government
 
 ### Special clause
 In all reproductions of brazilian laws, there are a well-known red phrase,
