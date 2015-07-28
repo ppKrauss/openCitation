@@ -60,28 +60,16 @@ The aim of this project is to offer a practical and theoretical *framework* (at 
 * *Citation coherence*: registering evidences in *`lawDocExceptions` dataset*. The aim is also to offer tools and datasets for describe open contents with certainty of openness at cited documents, and tools for measure of percentage of cited materials that are open, in contexts without this certainty.
 
 ## Datasets 
-[OKFN Dataset standards](https://github.com/datasets) was adopted in this project:
-* folder `./data` with tabular `.csv` files;
-* file `datapackage.json` with file description.
+&nbsp; <sup>[more detais here](https://github.com/ppKrauss/openCoherence/wiki/How-is-organized-the-datasets-of-this-project%3F)</sup>
 
-File description summary:
-
-* `./data/licenses.csv` - field `abbrev` is a key (label based on name abbreviation) for each license used in this project. Other fields describes the license and it resouces.
-
-* `./data/lawDocsRepos.csv` - Official digital repositories of law-documents of each sampled country. Some fields, as `legalSys`, can be checked [at Wikipedia's corresponding articles](https://en.wikipedia.org/wiki/List_of_national_legal_systems).
-
-* `./data/lawDocs.csv` - Samples of law-documents taked from lawDocsRepos. Key, checked licenses and URLs.
-
-* ... sci-docs ... repos and samples... 
-
-All these files can be [friendly edit at this open folder of collaborative sheets](https://drive.google.com/folderview?id=0ByK4EZuhc93QfmY1NHFvS3lHbmtzQ2Frb2hOMVhfdzdDLVpmemc2VFY0TDJISWw0aFo3UU0&usp=sharing).
+All the evidences and descriptors of this project, are stored as *datasets*, at the data folder.
 
 ## Legislation license reports
 Each contry that not have an explicit *official license* defined for its law-docs (at official legislation repositories), need a *"inferred license"*, that is described in this project as a uniform report.
 
 Report summary:
 
-* `./reports/inferredLicense-BR.csv` - Inferred licenses for Brazilian legislation and its law-documents.
+* [`inferredLicense-BR`](./reports/inferredLicense-BR.md) - Inferred licenses for Brazilian legislation and its law-documents.
 * ... please navigate and check where you can collaborate ...
 
 ### Methodology
@@ -107,6 +95,8 @@ After `lawDocsRepos` and `lawDocs` sheets  are filled, and  demand on a *inferre
 ## FAQ
 * [Who defines the document's license?](https://github.com/ppKrauss/openCoherence/wiki/Who-defines-the-document's-license%3F)
 * [How to avoid less relevant citations in the coherence analysis?](https://github.com/ppKrauss/openCoherence/wiki/How-to-avoid-less-relevant-citations-in-the-coherence-analysis%3F)
+* [How is organized the datasets of this project?](https://github.com/ppKrauss/openCoherence/wiki/How-is-organized-the-datasets-of-this-project%3F)
+
 
 ## NOTES
 * not be confuse with "open citation" of bibliographic references, https://opencitations.wordpress.com/
