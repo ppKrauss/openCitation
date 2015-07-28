@@ -12,12 +12,21 @@
 
  * Official law-documents repository: http://www.lexml.gov.br
 
-* Copyright laws: http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610
+* Copyright laws: [Lei Federal 9.610 de 1998](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610)
 
 ## Extracts and interpretations
 
-**1.** Official response to the *Article 2.4* of the Berne Convention, to give or not *protection to official texts*: no manifestation at the Brazilian's promulgation of accession to the Berne Convention, [Decreto Federal nº 75.699 de 1975](http://www.lexml.gov.br/urn/urn:lex:br:federal:decreto:1975-05-06;75699).
-<!-- no known direct response expliciting the protection-exclusion of *"official texts" -->
+**1.** Official response to the *Article 2.4* of the Berne Convention, to give or not *protection to official texts*: no manifestation at the Brazilian's promulgation of accession to the Berne Convention, [Decreto Federal nº 75.699 de 1975](http://www.lexml.gov.br/urn/urn:lex:br:federal:decreto:1975-05-06;75699),  but [Lei Federal 9.610 de 1998](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610) express the protection-exclusion of *"official texts"*,
+
+>  Art. 8º Não são objeto de proteção como direitos autorais de que trata esta Lei:
+
+> I - as idéias, procedimentos normativos, sistemas, métodos, projetos ou conceitos matemáticos como tais;
+
+> ...
+
+> IV - os textos de tratados ou convenções, leis, decretos, regulamentos, decisões judiciais e demais atos oficiais;
+
+where the exclusion from protection is exprexed by article 8, items I and IV.
 
 **2.** [Federal Constitution of 1988](http://www.lexml.gov.br/urn/urn:lex:br:federal:constituicao:1988-10-05;1988)
 
