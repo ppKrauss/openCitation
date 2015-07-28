@@ -10,7 +10,7 @@ Legal and scientific documents are typical [free contents](https://en.wikipedia.
 
 * Typical repositories of legislation (''law-docs''): [BR (LexML)](http://www.lexml.gov.br/),  [EU countries (N-Lex)](http://eur-lex.europa.eu/n-lex/), [UK (legislation)](http://www.legislation.gov.uk/browse). Access to contents in HTML, PDF and other formats.
 
-In both (sci-docs and law-docs) the content is published by an authority, like a [scientific journal](https://en.wikipedia.org/wiki/Scientific_journal) or a [government gazette](https://en.wikipedia.org/wiki/Government_gazette). Only official versions (of law-docs and sci-docs) possess legal probative value. The *official repositories* preserves the documents and its  probative value.
+In both (sci-docs and law-docs) the content is published by an authority, like a [scientific journal](https://en.wikipedia.org/wiki/Scientific_journal) or a [government gazette](https://en.wikipedia.org/wiki/Government_gazette). Only official versions of the documents possess legal probative value. The *official repositories* preserves the documents and its  probative value.
 
 ### Openness degree of a license
 The characterization of the "openness" of a document (or a set of documents as collection or repository) can be formalized by the following procedure (simplifyed by the [licenses table](./data/licenses.csv)):
@@ -34,45 +34,29 @@ When the repository obligates that each document express its license, as [PubMed
 
 (scientific documents of open repositories not need interpreted "fake license").
 
-### Extension coherence
+### Doc-extension coherence
 Some documents need an "extension", like appendix, external figures, external maps, tables, lists, databases, etc. On science literature they are [supplementary matterial](http://jats.nlm.nih.gov/archiving/tag-library/1.0/n-q6p0.html) and *commom database*; in legislation they are [attachment](http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd01/part2-specs/material/AkomaNtoso30-csd13_xsd_Element_attachment.html) (or appendix and other documental objects) that can't published in the same document's body, or that is reused by other law-docs. 
 
 As extensions are explicit parts of the document, they are not subject to "relevance" interpretation, so, they **must use the same license** tham it's document.
 
 ### Citation coherence
-&nbsp;<small>(see xxx)</small>
 A complementar indicator of openness, [under discussion](https://github.com/okfn/opendefinition/wiki/Citation-alike-clauses-of-open-licenses-for-law#user-content-the-citation-alike-clause-and-observance), is checking the observance of the same or superior *openess degree* in a cited document (when [citing external sources](https://en.wikipedia.org/wiki/Wikipedia:Citing_sources)). When cited document have less *degree*,  we can say that the citation is not coherent.
 
 [Scientific literature](https://en.wikipedia.org/wiki/Scientific_literature) use *bibliographic citation*, it is a fundation of the scientific research. By other hand,  legislators avoids, in law-docs, the citation of external documents: the usual is a law-doc citing another law-doc of the same legislative system, not "external" documents... Is usual for government and industry to reuse works, as recommendations and studies that, otherwise, would cost a lot of money. The reuse of documents reduce costs, so, this is the main motivation to the sporadic external citation in law-docs.
 
-In both, sci-docs and law-docs,  external complementar material (appendix, table, map, etc.) can be considered "cited document". In sci-docs there are also a [standard reference-list](http://jats.nlm.nih.gov/archiving/tag-library/1.0/n-ajd0.html) pointing to external and independent documents.  In law-docs the [legal citation analysis](https://en.wikipedia.org/wiki/Legal_citation#Legal_citation_analysis)  determinates what documents are external to the legal system and are in fact a complement of the law.
+In both, sci-docs and law-docs,  cited external documents, that are not in the same collection, can be considered "cited document". In sci-docs there are also a [standard reference-list](http://jats.nlm.nih.gov/archiving/tag-library/1.0/n-ajd0.html) pointing to external and independent documents.  In law-docs the [legal citation analysis](https://en.wikipedia.org/wiki/Legal_citation#Legal_citation_analysis)  determinates what documents are external to the legal system and are in fact a complement of an obligation rule of the law.
 
-In both, sci-docs and law-docs, may be difficult  cite only open documents... The "context of citation" may determine a *weighting* of relevance:
-
-* in law-docs a citation that *blocks the undertstand of an obligation*, is really a problem; while a citation that is only a complementar explanation, or it not determinates an obligation, not blocks. 
-
-* in sci-docs a citation that is the unique to check scientific merit of a central ideia of the article, is more important than other one that  offers (open) alternatives, or is about a secondary matter.
-
-<!---
- ... When all cited documents are open,  **When it occurs, we can say that the document citations are *coherent* with its license**.
-OLD DRAFT, lixo:
-### Choice and observance of openness degree
-Both writers, sci-doc author or legislator, can influency the choice of cited documents. If the "contract" between writer and authority not states any thing about citation, the writer can cite copyrighted documents. But the authorities, of legal system or sci-journal, they can (is possible to) obligate some kind of observance to preserve openness in citations, that is: a cited document must use same license or a license with more openness.
-..fig...
-The "openness degree" is illustred by the CC licenses ordering. A cited document can have most open license, or a license with the same degree. **When it occurs, we can say that the document citations are *coherent* with its license**.
--->
 ## Objective
-The aim of this project is to offer a practical and theoretical *framework* (at least a proof of concept) to subsidise the characterization of "openness coherence" in repositories and collections, of scientific and legislative documents. Spliting into specific goals:
+The aim of this project is to offer a practical and theoretical *framework* (at least a proof of concept) to subsidise the characterization of "openness coherence" in repositories and collections, of scientific and legislative documents. Splitting into specific goals:
 
 * Show the *official collections*: via [`lawDocsRepos` dataset](./data/lawDocsRepos.csv), each contry's official law-doc repository.
 
 * Show the  *official licenses*: via [`licenses` dataset](./data/licenses.csv) list all known licenses used in official repositories, and via [`reports/inferredLicense` consensual interpretation](./reports), show the "inferred licenses" of countries that use no explicit license.
 
-* *Coherence in official collections*: via [`lawDocsRepos` dataset](./data/lawDocsRepos.csv), describing official repositories, and [`lawDocs` dataset](./data/lawDocs.csv), sampling law-docs (as evidences), 
+* *Coherence in official collections*: via [`lawDocsRepos` dataset](./data/lawDocsRepos.csv), describing official repositories, and [`lawDocs` dataset](./data/lawDocs.csv), sampling law-docs (as evidences); monitoring general cumpliance of the "expected licence" in all repository's documents. 
 
-monitoring general cumpliance of the "expected licence" in all repository's documents. 
-* *Extension coherence*: 
-* *Citation coherence*: the aim is to offer tools and datasets for describe open contents with certainty of openness at cited documents, and tools for measure of percentage of cited materials that are open, in contexts without this certainty.
+* *Extension coherence*: registering evidences in *`lawDocExceptions` dataset*.
+* *Citation coherence*: registering evidences in *`lawDocExceptions` dataset*. The aim is also to offer tools and datasets for describe open contents with certainty of openness at cited documents, and tools for measure of percentage of cited materials that are open, in contexts without this certainty.
 
 ## Datasets 
 [OKFN Dataset standards](https://github.com/datasets) was adopted in this project:
@@ -118,6 +102,10 @@ After `lawDocsRepos` and `lawDocs` sheets  are filled, and  demand on a *inferre
 
 ## ...Planed tools...
 ...
+
+## FAQ
+* [[Who defines the document's license?]]
+* [[How to avoid less relevant citations in the coherence analysis?]]
 
 ## NOTES
 * not be confuse with "open citation" of bibliographic references, https://opencitations.wordpress.com/
