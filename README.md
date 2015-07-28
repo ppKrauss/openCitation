@@ -56,6 +56,7 @@ The aim of this project is to offer a practical and theoretical *framework* (at 
 * *Coherence in official collections*: via [`lawDocsRepos` dataset](./data/lawDocsRepos.csv), describing official repositories, and [`lawDocs` dataset](./data/lawDocs.csv), sampling law-docs (as evidences); monitoring general cumpliance of the "expected licence" in all repository's documents. 
 
 * *Extension coherence*: registering evidences in *`lawDocExceptions` dataset*.
+
 * *Citation coherence*: registering evidences in *`lawDocExceptions` dataset*. The aim is also to offer tools and datasets for describe open contents with certainty of openness at cited documents, and tools for measure of percentage of cited materials that are open, in contexts without this certainty.
 
 ## Datasets 
@@ -104,8 +105,8 @@ After `lawDocsRepos` and `lawDocs` sheets  are filled, and  demand on a *inferre
 ...
 
 ## FAQ
-* [[Who defines the document's license?]]
-* [[How to avoid less relevant citations in the coherence analysis?]]
+* [Who defines the document's license?](https://github.com/ppKrauss/openCoherence/wiki/Who-defines-the-document's-license%3F)
+* [How to avoid less relevant citations in the coherence analysis?](https://github.com/ppKrauss/openCoherence/wiki/How-to-avoid-less-relevant-citations-in-the-coherence-analysis%3F)
 
 ## NOTES
 * not be confuse with "open citation" of bibliographic references, https://opencitations.wordpress.com/
