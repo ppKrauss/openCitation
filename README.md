@@ -1,7 +1,5 @@
 # Open Coherence
-Mini-framework for check openness-coherence of contents about liceses, extensions and citations.
-
-This project, focusing on legal and scientific contents, offers tools and datasets for describe open contents with certainty of openness and tools for measure the degreee of openess.
+This project, a mini-framework for check openness-coherence of legal and scientific contents, offers tools and datasets for describe open contents with certainty of openness and tools for measure the degreee of openess.
 
 ## Introduction
 Legal and scientific documents are typical [free contents](https://en.wikipedia.org/wiki/Free_content#Legislation), and in recent years they are stored in big digital repositories that archives publicly accessible full-text documents in standard formats, as a form of *digital [legal deposit](https://en.wikipedia.org/wiki/Legal_deposit)*.
