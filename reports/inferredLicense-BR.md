@@ -7,8 +7,7 @@ endorsed_status: waiting
 layout: page
 ---
 
-## Check list
-Consistent with [lawDocsRepos](https://github.com/ppKrauss/openCitation/blob/master/data/lawDocsRepos.csv):
+Checklist, from [lawDocsRepos](https://github.com/ppKrauss/openCitation/blob/master/data/lawDocsRepos.csv):
 
  * Legal system: *Civil law*
 
