@@ -29,7 +29,9 @@ Label  | Subject | Name and oficial URL | Effective date
 
 ## Extracts and interpretations
 
-**1.** Official response to the *Article 2.4* of the Berne Convention, to give or not *protection to official texts*:<br/> no manifestation at the Brazilian's promulgation of accession to the Berne Convention, [Dec75699](http://www.lexml.gov.br/urn/urn:lex:br:federal:decreto:1975-05-06;75699),  but [Lei9610](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610) express the protection-exclusion of *"official texts"*,
+**1.** Official response to the *Article 2.4* of the Berne Convention, to give or not *protection to official texts*:
+
+There are no manifestation at the Brazilian's promulgation of accession to the Berne Convention, [Dec75699](http://www.lexml.gov.br/urn/urn:lex:br:federal:decreto:1975-05-06;75699),  but [authors' rights](https://en.wikipedia.org/wiki/Authors%27_rights) law, [Lei9610](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610), express the protection-exclusion of *"official texts"*,
 
 >  Art. 8º Não são objeto de proteção como direitos autorais de que trata esta Lei:
 
@@ -48,12 +50,11 @@ Label  | Subject | Name and oficial URL | Effective date
 
 >> IV - the texts of treaties or conventions, laws, decrees, regulations, judicial decisions and other official enactments;
 
-where the exclusion from protection is exprexed by article 8, items I and IV.
+where the exclusion from protection is expressed by article 8, items I and IV.
+It excludes legislative and juridic documents, but not all works (ex. cited maps, tables, etc.) created by the federal government.
 
-PS: exclude legislative and juridic documents, but not all works created by the federal government.
 
-
-**2.** [CF1988](http://www.lexml.gov.br/urn/urn:lex:br:federal:constituicao:1988-10-05;1988)
+**2.** The Federal Constitution ([CF1988](http://www.lexml.gov.br/urn/urn:lex:br:federal:constituicao:1988-10-05;1988)) states,
 
 > Art. 5º Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:
 
