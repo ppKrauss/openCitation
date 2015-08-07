@@ -1,8 +1,14 @@
-# Inferred license for Brazilian legislation
-`inferredLicense-BR` version *1.1*. &nbsp;&nbsp;&nbsp; Status of this report: *REVISION*.
+---
+title: Inferred license for Brazilian legislation
+version: 1.1
+version_status: REVISION
+endorsed_n: 1
+endorsed_status: waiting
+layout: page
+---
 
 ## Check list
-* Consistent with [lawDocsRepos](https://github.com/ppKrauss/openCitation/blob/master/data/lawDocsRepos.csv):
+Consistent with [lawDocsRepos](https://github.com/ppKrauss/openCitation/blob/master/data/lawDocsRepos.csv):
 
  * Legal system: *Civil law*
 
@@ -12,11 +18,18 @@
 
  * Official law-documents repository: http://www.lexml.gov.br
 
-* Copyright laws: [Lei Federal 9.610 de 1998](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610)
+
+## Evidences
+
+Label  | Subject | Name and oficial URL | Effective date
+---    | ---     | ---                  | ---
+*Dec75699* | Berne1971 | [Decreto Federal nº 75.699 de 06/05/1975](http://www.lexml.gov.br/urn/urn:lex:br:federal:decreto:1975-05-06;75699) | 1975-04-20
+*CF1988*  | Constitution | [Constituição Federal de 05/10/1988](http://www.lexml.gov.br/urn/urn:lex:br:federal:constituicao:1988-10-05;1988) | 1988-10-05
+*Lei9610* | copyright | [Lei Federal nº 9.610 de 19/02/1998](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610)| 1998-06-19
 
 ## Extracts and interpretations
 
-**1.** Official response to the *Article 2.4* of the Berne Convention, to give or not *protection to official texts*:<br/> no manifestation at the Brazilian's promulgation of accession to the Berne Convention, [Decreto Federal nº 75.699 de 1975](http://www.lexml.gov.br/urn/urn:lex:br:federal:decreto:1975-05-06;75699),  but [Lei Federal 9.610 de 1998](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610) express the protection-exclusion of *"official texts"*,
+**1.** Official response to the *Article 2.4* of the Berne Convention, to give or not *protection to official texts*:<br/> no manifestation at the Brazilian's promulgation of accession to the Berne Convention, [Dec75699](http://www.lexml.gov.br/urn/urn:lex:br:federal:decreto:1975-05-06;75699),  but [Lei9610](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610) express the protection-exclusion of *"official texts"*,
 
 >  Art. 8º Não são objeto de proteção como direitos autorais de que trata esta Lei:
 
@@ -27,7 +40,7 @@
 > IV - os textos de tratados ou convenções, leis, decretos, regulamentos, decisões judiciais e demais atos oficiais;
 
 
-([Translated as](http://english.tse.jus.br/arquivos/federal-constitution))
+[Translated](http://english.tse.jus.br/arquivos/federal-constitution) as
 
 >> Art. 8th The following shall be excluded from copyright protection within the meaning of this Law:
 
@@ -39,7 +52,8 @@ where the exclusion from protection is exprexed by article 8, items I and IV.
 
 PS: exclude legislative and juridic documents, but not all works created by the federal government.
 
-**2.** [Federal Constitution of 1988](http://www.lexml.gov.br/urn/urn:lex:br:federal:constituicao:1988-10-05;1988)
+
+**2.** [CF1988](http://www.lexml.gov.br/urn/urn:lex:br:federal:constituicao:1988-10-05;1988)
 
 > Art. 5º Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:
 
@@ -73,11 +87,8 @@ So, we can infer  that it is an license clause, an exigence for  the reproductio
 The default *"inferred license"* of Brazilian law-documents is something similar to [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode),  with an special clause, like an attribution clause, enforcing the use of the red phrase in the distributed copies.
 
 ### Endorsed the conclusion
-The persons bellow endorsed the conclusions of this report,
-* [ppKrauss](https://github.com/ppKrauss) v1.0.
-* ... add yours!...
+The persons bellow endorsed the conclusions of this report (`endorsed_n`),
+* [ppKrauss](https://github.com/ppKrauss) v1.1, v1.0.
 
-Persons that indirectly endorsed, as theirs manifestation was used during elaboration of this report,
+Persons that endorsed indirectly, or endorsed some version or some part, as theirs manifestation was used during elaboration of this report,
 * [bluechi](https://github.com/bluechi) v1.0 with [[1]](https://github.com/okfn/opendefinition/issues/114#issuecomment-122265499).
-* ... person and URL of manifestation ...
-
