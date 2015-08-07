@@ -28,7 +28,7 @@ Label  | Subject | Name and oficial URL | Effective date
 
 ## Extracts and interpretations
 
-**1.** Official response to the *Article 2.4* of the Berne Convention, to give or not *protection to official texts*:
+**1.** Official response to the  ([*Article 2.4*](http://www.wipo.int/wipolex/en/treaties/text.jsp?file_id=283698#P89_12211) of the [Berne Convention](https://en.wikipedia.org/wiki/Berne_Convention), to give or not *protection to official texts*:
 
 There are no manifestation at the Brazilian's promulgation of accession to the Berne Convention, [Dec75699](http://www.lexml.gov.br/urn/urn:lex:br:federal:decreto:1975-05-06;75699),  but [authors' rights](https://en.wikipedia.org/wiki/Authors%27_rights) law, [Lei9610](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610), express the protection-exclusion of *"official texts"*,
 
