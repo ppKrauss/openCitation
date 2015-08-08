@@ -1,8 +1,13 @@
-# Inferred license for Brazilian legislation
-`inferredLicense-BR` version *1.1*. &nbsp;&nbsp;&nbsp; Status of this report: *REVISION*.
+---
+title: Inferred license for Brazilian legislation
+version: 1.1
+version_status: REVISION
+endorsed_n: 1
+endorsed_status: waiting
+layout: page
+---
 
-## Check list
-* Consistent with [lawDocsRepos](https://github.com/ppKrauss/openCitation/blob/master/data/lawDocsRepos.csv):
+Checklist, from [lawDocsRepos](https://github.com/ppKrauss/openCitation/blob/master/data/lawDocsRepos.csv):
 
  * Legal system: *Civil law*
 
@@ -12,15 +17,43 @@
 
  * Official law-documents repository: http://www.lexml.gov.br
 
-* Copyright laws: http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610
+
+## Evidences
+
+Label  | Subject | Name and oficial URL | Effective date
+---    | ---     | ---                  | ---
+*Dec75699* | Berne1971 | [Decreto Federal nº 75.699 de 06/05/1975](http://www.lexml.gov.br/urn/urn:lex:br:federal:decreto:1975-05-06;75699) | 1975-04-20
+*CF1988*  | Constitution | [Constituição Federal de 05/10/1988](http://www.lexml.gov.br/urn/urn:lex:br:federal:constituicao:1988-10-05;1988) | 1988-10-05
+*Lei9610* | copyright | [Lei Federal nº 9.610 de 19/02/1998](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610)| 1998-06-19
 
 ## Extracts and interpretations
 
-**1.** Official and direct response to the *article 2.4 (official texts)* of the Berne Convention:
+**1.** Official response to the  [*Article 2.4*](http://www.wipo.int/wipolex/en/treaties/text.jsp?file_id=283698#P89_12211) of the [Berne Convention](https://en.wikipedia.org/wiki/Berne_Convention), to give or not *protection to official texts*:
 
-... no known direct response expliciting the protection-exclusion of *"official texts of a legislative, administrative and legal nature, and to official translations of such texts"*...
+There are no manifestation at the Brazilian's promulgation of accession to the Berne Convention, [Dec75699](http://www.lexml.gov.br/urn/urn:lex:br:federal:decreto:1975-05-06;75699),  but [authors' rights](https://en.wikipedia.org/wiki/Authors%27_rights) law, [Lei9610](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610), express the protection-exclusion of *"official texts"*,
 
-**2.** [Federal Constitution of 1988](http://www.lexml.gov.br/urn/urn:lex:br:federal:constituicao:1988-10-05;1988)
+>  Art. 8º Não são objeto de proteção como direitos autorais de que trata esta Lei:
+
+> I - as idéias, procedimentos normativos, sistemas, métodos, projetos ou conceitos matemáticos como tais;
+
+> ...
+
+> IV - os textos de tratados ou convenções, leis, decretos, regulamentos, decisões judiciais e demais atos oficiais;
+
+
+[Translated](http://english.tse.jus.br/arquivos/federal-constitution) as
+
+>> Art. 8th The following shall be excluded from copyright protection within the meaning of this Law:
+
+>> ...
+
+>> IV - the texts of treaties or conventions, laws, decrees, regulations, judicial decisions and other official enactments;
+
+where the exclusion from protection is expressed by article 8, items I and IV.
+It excludes legislative and juridic documents, but not all works (ex. cited maps, tables, etc.) created by the federal government.
+
+
+**2.** The Federal Constitution ([CF1988](http://www.lexml.gov.br/urn/urn:lex:br:federal:constituicao:1988-10-05;1988)) states,
 
 > Art. 5º Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:
 
@@ -40,25 +73,6 @@ Summarizing:
 * Article 5th (inciso XIV), ensure "everyone access" to information for work;
 * Article 216 (§ 2nd) states the "mandatory deductible access" (no pay for law-documents).
 
-
-**3.** [Law 9610/1998](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610):
-
->  Art. 8º Não são objeto de proteção como direitos autorais de que trata esta Lei:
-
-> ...
-
-> IV - os textos de tratados ou convenções, leis, decretos, regulamentos, decisões judiciais e demais atos oficiais;
-
-([Translated as](http://english.tse.jus.br/arquivos/federal-constitution))
-
->> Art. 8th The following shall be excluded from copyright protection within the meaning of this Law:
-
->> ...
-
->> IV - the texts of treaties or conventions, laws, decrees, regulations, judicial decisions and other official enactments;
-
-Exclude legislative and juridic documents, but not all all works created by the federal government
-
 ### Special clause
 In all reproductions of brazilian laws, there are a well-known red phrase,
 
@@ -73,11 +87,8 @@ So, we can infer  that it is an license clause, an exigence for  the reproductio
 The default *"inferred license"* of Brazilian law-documents is something similar to [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode),  with an special clause, like an attribution clause, enforcing the use of the red phrase in the distributed copies.
 
 ### Endorsed the conclusion
-The persons bellow endorsed the conclusions of this report,
-* [ppKrauss](https://github.com/ppKrauss) v1.0.
-* ... add yours!...
+The persons bellow endorsed the conclusions of this report (`endorsed_n`),
+* [ppKrauss](https://github.com/ppKrauss) v1.1, v1.0.
 
-Persons that indirectly endorsed, as theirs manifestation was used during elaboration of this report,
+Persons that endorsed indirectly, or endorsed some version or some part, as theirs manifestation was used during elaboration of this report,
 * [bluechi](https://github.com/bluechi) v1.0 with [[1]](https://github.com/okfn/opendefinition/issues/114#issuecomment-122265499).
-* ... person and URL of manifestation ...
-
