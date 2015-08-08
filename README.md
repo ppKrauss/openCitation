@@ -59,6 +59,11 @@ The aim of this project is to offer a practical and theoretical *framework* (at 
 
 * *Citation coherence*: registering evidences in *`lawDocExceptions` dataset*. The aim is also to offer tools and datasets for describe open contents with certainty of openness at cited documents, and tools for measure of percentage of cited materials that are open, in contexts without this certainty.
 
+### Applications
+The conclusions and datasets present in this project can be used in many contexts and applications... Some of them:
+* Taxonomy of repositorires
+* ...
+ 
 ## Datasets 
 &nbsp; <sup>[more detais here](https://github.com/ppKrauss/openCoherence/wiki/How-is-organized-the-datasets-of-this-project%3F)</sup>
 
@@ -93,11 +98,18 @@ After `lawDocsRepos` and `lawDocs` sheets  are filled, and  demand on a *inferre
 ...
 
 ## FAQ
+
 * [Who defines the document's license?](https://github.com/ppKrauss/openCoherence/wiki/Who-defines-the-document's-license%3F)
+
 * [How to avoid less relevant citations in the coherence analysis?](https://github.com/ppKrauss/openCoherence/wiki/How-to-avoid-less-relevant-citations-in-the-coherence-analysis%3F)
+
 * [How is organized the datasets of this project?](https://github.com/ppKrauss/openCoherence/wiki/How-is-organized-the-datasets-of-this-project%3F)
 
 
-## NOTES
-* not be confuse with "open citation" of bibliographic references, https://opencitations.wordpress.com/
-* ...
+## This project is not a ...
+
+* This project must be not confused with *"open citation"* of bibliographic references, https://opencitations.wordpress.com/
+
+* The linceses in the [reports](./reports) folder, expressed in the `inferredLicense-XX.md` files, **are "fake licenses"**, the objective of this project is not to offer a proposal of license, is only to characterise repositories and subsidiase a *taxonomy* (of openness) of these repositories. 
+
+
