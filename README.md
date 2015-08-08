@@ -73,7 +73,7 @@ Report summary:
 ### Methodology
 After `lawDocsRepos` and `lawDocs` sheets  are filled, and  demand on a *inferred license* confirmed:
 
-1. Make a copy of `./reports/template.md` named `inferredLicense-XX.md` where `XX` is the country code (as *country* at `lawDocsRepos`);
+1. Make a copy of `./reports/inferredLicense-template.md` named `inferredLicense-XX.md` where `XX` is the country code (as *country* at `lawDocsRepos`);
 
 2. Fill the `??1` placeholders with the corresponding `lawDocsRepos` fields.
 
