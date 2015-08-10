@@ -23,7 +23,7 @@ The *openness degree* is illustred here by the [CC licenses ordering](https://co
 
 For algorithmic or mathematical uses of the *openness degree*, we can adopt the following symbols and conventions:
 
-> *od*(*docX*)ϵ[0-7]&#8838;&#8469; &nbsp; is the `opennessDegree` of *docX*, inferred by its canonic licence, *canLinc*(*docX*)ϵ{"cc0", "cc-by", ...}
+> *od*(*docX*)ϵ[0-7]&#8838;&#8469; &nbsp; is the `opennessDegree` of *docX*, inferred by its canonic licence, *canLic*(*docX*)ϵ{"cc0", "cc-by", ...}
 
 > *od*(*repoX*)ϵ[0-7]&#8838;&#8477;<sup>+</sup> &nbsp; is the `opennessDegree` of *repoX*={*doc1*, *doc2*, ..., *doc_i*, ..., *docN*}
 
@@ -35,13 +35,33 @@ The same schema can be applyed to datasets and databases. Example: each CSV file
 ### Coherence of law-doc collections
 When a collection have an explicit license, like [UK](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/) or [GE](https://www.govdata.de/dl-de/by-2-0) official law-doc collections, it is easy to audit: check if the license is in fact respected, comparing the coherence between observed openness of each law-doc in the country's repository, and the country's license for that collection.
 
-When there are no explicit license: we can interpret and build a "fake license" (**see [reports](./reports)**) to use in the same way.
+When there are no explicit license: we can interpret and build a "fake license" (**see [reports](./reports)**) to use in the same way.   
+
+Technically a *law-repo* is a database of *law-docs* characterized by a line at [lawDocsRepos](https://github.com/ppKrauss/openCoherence/blob/master/data/lawDocsRepos.csv) and its "default license" (the `repo_license` field). Supposing that each `doc_i` of the repo has an *od*(*doc_i*), by [standard SQL](https://en.wikipedia.org/wiki/SQL-92) we have 
+```sql
+    WITH odvals AS (
+      SELECT CASE WHEN doc_license IS NOT NULL THEN od(canLic(doc_license)) 
+                  ELSE $od_dft
+             END AS od_doc
+      FROM law_repo
+    ) SELECT AVG(od_doc) AS od_repo, COUNT(*) AS N FROM odvals;
+```
+where `$od_dft` is the *od* value of the "default license". The average is about exceptions of this default.  When it is a "rare event" the sampled percentual (`100*N_rare/N_sampled`) can be used as a complementar indicator. The usual expected `N_rare`, of course, is zero; so, when the community accepts a little sampling as evidence (see [lawDocs](https://github.com/ppKrauss/openCoherence/blob/master/data/lawDocs.csv)), the [openDegree](https://github.com/ppKrauss/openCoherence/blob/master/data/licenses.csv)  of the `repo_license` field can be used as a representative `od_repo`.
 
 ### Coherence of sci-doc collections
 
 When the repository obligates that each document express its license, as [PubMed Central](http://www.ncbi.nlm.nih.gov/pmc/about/copyright/), or offers a default-license, like [SciELO](http://blog.scielo.org/en/2014/08/29/scielo-participates-in-the-global-coalition-supporting-creative-commons-licenses-to-access-journal-articles/), it is easy to audit the coherence between observed openness of each sci-doc in the repository.
 
 (scientific documents of open repositories not need interpreted "fake license").
+
+Technically a *sci-repo* is a database of *sci-docs*. Supposing that each `doc_i` of the repo has an *od*(*doc_i*), by standard  SQL 
+we have 
+```sql
+    WITH odvals AS (SELECT od(canLic(doc_license)) as od_doc FROM law_repo) 
+    SELECT AVG(od_doc) AS od_repo, COUNT(*) AS N_samples 
+    FROM odvals WHERE od_doc IS NOT NULL;
+```
+Where is supposed "no default license" for  the *sci-repo*. The sampled percentual (`100*N_samples/N`) can be used as a complementar indicator.
 
 ### Doc-extension coherence
 Some documents need an "extension", like appendix, external figures, external maps, external tables, databases, etc. On science literature they are [supplementary matterial](http://jats.nlm.nih.gov/archiving/tag-library/1.0/n-q6p0.html) and *commom database*; in legislation they are [attachment](http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd01/part2-specs/material/AkomaNtoso30-csd13_xsd_Element_attachment.html) (or appendix and other documental objects) that are can't published in the same document's body structure, or that is reused by other law-docs. 
