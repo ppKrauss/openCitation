@@ -63,17 +63,19 @@ we have
 ```
 Where is supposed "no default license" for  the *sci-repo*. The sampled percentual (`100*N_samples/N`) can be used as a complementar indicator.
 
-### Doc-extension coherence
-Some documents need an "extension", like appendix, external figures, external maps, external tables, databases, etc. On science literature they are [supplementary matterial](http://jats.nlm.nih.gov/archiving/tag-library/1.0/n-q6p0.html) and *commom database*; in legislation they are [attachment](http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd01/part2-specs/material/AkomaNtoso30-csd13_xsd_Element_attachment.html) (or appendix and other documental objects) that are can't published in the same document's body structure, or that is reused by other law-docs. 
+### Doc-attach coherence
+Some documents need an "attachment", like appendix, external figures, external maps, external tables, complementar databases, etc. On science literature they are [supplementary matterial](http://jats.nlm.nih.gov/archiving/tag-library/1.0/n-q6p0.html) and *commom database*; in legislation they are [formal attachment](http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd01/part2-specs/material/AkomaNtoso30-csd13_xsd_Element_attachment.html) (or appendix and other documental objects) that are can't published in the same document's body structure, or that is reused by other law-docs. 
 
-As extensions are explicit parts of the document, they are not subject to "relevance" interpretation, so, they **must use the same license** tham it's document.
+As doc-attachs are explicit parts of the document, they are not subject to "relevance" interpretation, and, to be coherent, they **must use the same license** tham it's document.
+
+Technically a repo with *standard XML docucments* (like [JATS](https://en.wikipedia.org/wiki/Journal_Article_Tag_Suite) for sci-docs or [AKN](https://en.wikipedia.org/wiki/Akoma_Ntoso) form law-docs), where XML express doc-attach licences, we can check (by [XPath](https://en.wikipedia.org/wiki/XPath)) and calculate *od*(*attach_licence*) of each document. Supposing a document where its *M* attachments have *C*&le;*M* cases of *od*&le;`od_doc`: the <b>factor *C*/*M*</b> can be used to reduce `od_doc` or to express (as %) "lost of openness" in the document.
 
 ### Citation coherence
 A complementar indicator of openness, [under discussion](https://github.com/okfn/opendefinition/wiki/Citation-alike-clauses-of-open-licenses-for-law#user-content-the-citation-alike-clause-and-observance), is checking the observance of the same or superior *openess degree* in a cited document (when [citing external sources](https://en.wikipedia.org/wiki/Wikipedia:Citing_sources)). When cited document have less *degree*,  we can say that the citation is not coherent.
 
 [Scientific literature](https://en.wikipedia.org/wiki/Scientific_literature) use *bibliographic citation*, it is a fundation of the scientific research. By other hand,  legislators avoids, in law-docs, the citation of external documents: the usual is a law-doc citing another law-doc of the same legislative system, not "external" documents... Is usual for government and industry to reuse works, as recommendations and studies that, otherwise, would cost a lot of money. The reuse of documents reduce costs, so, this is the main motivation to the sporadic external citation in law-docs.
 
-In both, sci-docs and law-docs,  cited external documents, that are not in the same collection, can be considered "cited document". In sci-docs there are also a [standard reference-list](http://jats.nlm.nih.gov/archiving/tag-library/1.0/n-ajd0.html) pointing to external and independent documents.  In law-docs the [legal citation analysis](https://en.wikipedia.org/wiki/Legal_citation#Legal_citation_analysis)  determinates what documents are external to the legal system and are in fact a complement of an obligation rule of the law.
+In both, sci-docs and law-docs,  cited external documents, that are not in the same collection, can be considered "cited document". In sci-docs there are also a [standard reference-list](http://jats.nlm.nih.gov/archiving/tag-library/1.0/n-ajd0.html) pointing to external and independent documents.  In law-docs the [legal citation analysis](https://en.wikipedia.org/wiki/Legal_citation#Legal_citation_analysis)  determinates what documents are external to the legal system and are in fact a complement of an [obligation rule](https://en.wikipedia.org/wiki/Law_of_obligations) of the law.
 
 ## Objective
 The aim of this project is to offer a practical and theoretical *framework* (at least a proof of concept) to subsidise the characterization of "openness coherence" in repositories and collections, of scientific and legislative documents. Splitting into specific goals:
@@ -84,15 +86,20 @@ The aim of this project is to offer a practical and theoretical *framework* (at 
 
 * *Coherence in official collections*: via [`lawDocsRepos` dataset](./data/lawDocsRepos.csv), describing official repositories, and [`lawDocs` dataset](./data/lawDocs.csv), sampling law-docs (as evidences); monitoring general cumpliance of the "expected licence" in all repository's documents. 
 
-* *Extension coherence*: registering evidences in *`lawDocExceptions` dataset*.
+* *Attach coherence*: registering evidences in *`lawDocExceptions` dataset*.
 
 * *Citation coherence*: registering evidences in *`lawDocExceptions` dataset*. The aim is also to offer tools and datasets for describe open contents with certainty of openness at cited documents, and tools for measure of percentage of cited materials that are open, in contexts without this certainty.
 
 ### Applications
 The conclusions and datasets present in this project can be used in many contexts and applications... Some of them:
-* Taxonomy of repositorires
+* Taxonomy of repositorires (for "openness census");
+* Compare openness of documents, collections or repositories;
+* Support users to understand "default licences";
+* Support users to find "most open repositories", "most open authors", etc.
+* Support trials;
+* Open license marketing;
 * ...
- 
+
 ## Datasets 
 &nbsp; <sup>[more detais here](https://github.com/ppKrauss/openCoherence/wiki/How-is-organized-the-datasets-of-this-project%3F)</sup>
 
