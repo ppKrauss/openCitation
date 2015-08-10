@@ -19,7 +19,18 @@ The characterization of the "openness" of a document (or a set of documents as c
 
 ![The opennes degree](./reports/imgs/openessDeg-CC-licenses-short.png "The opennes degree")
 
-The *openness degree* is illustred here by the [CC licenses ordering](https://commons.wikimedia.org/wiki/File:Ordering_of_Creative_Commons_licenses_from_most_to_least_open.png), but it can be enhanced with more canonical licenses, taken from [OpenDefinition-conformant licenses](http://opendefinition.org/licenses/). 
+The *openness degree* is illustred here by the [CC licenses ordering](https://commons.wikimedia.org/wiki/File:Ordering_of_Creative_Commons_licenses_from_most_to_least_open.png), but it can be enhanced with more canonical licenses, taken from [OpenDefinition-conformant licenses](http://opendefinition.org/licenses/).
+
+For algorithmic or mathematical uses of the *openness degree*, we can adopt the following symbols and conventions:
+
+> *od*(*docX*)ϵ[0-7]&#8838;&#8469; &nbsp; is the `opennessDegree` of *docX*, inferred by its canonic licence, *canLinc*(*docX*)ϵ{"cc0", "cc-by", ...}
+
+> *od*(*repoX*)ϵ[0-7]&#8838;&#8477;<sup>+</sup> &nbsp; is the `opennessDegree` of *repoX*={*doc1*, *doc2*, ..., *doc_i*, ..., *docN*}
+
+where *docX* is a document and *repoX* is a repository, represented by a set of *N* documents. The range 0&#8209;7 is arbitrary (can be changed). A document with *od*(*docX*)=0 is for all range, from [classified](https://en.wikipedia.org/wiki/Classified_information) to [copyrighted](https://en.wikipedia.org/wiki/Copyright) documents. The `NULL` can be added in the domain, for the "unknown" semantic.
+The operational definition of *od*(*repoX*) can be expressed in terms of its *doc_i* and the [usual average](https://en.wikipedia.org/wiki/Arithmetic_mean) of *od*(*doc_i*) over the *N* documents.
+
+The same schema can be applyed to datasets and databases. Example: each CSV file at [OKFN dataset](https://github.com/datasets/) have an explicit license (most of it is [odc-pddl1](http://opendatacommons.org/licenses/pddl/1.0/)). Each database license can be associated with a "canonical" one, and all these canonical ranged in a  0&#8209;7 normalized interval (where 7 is the *public domain* or *odc-pddl1*).
 
 ### Coherence of law-doc collections
 When a collection have an explicit license, like [UK](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/) or [GE](https://www.govdata.de/dl-de/by-2-0) official law-doc collections, it is easy to audit: check if the license is in fact respected, comparing the coherence between observed openness of each law-doc in the country's repository, and the country's license for that collection.
