@@ -91,12 +91,15 @@ The aim of this project is to offer a practical and theoretical *framework* (at 
 * *Citation coherence*: registering evidences in *`lawDocExceptions` dataset*. The aim is also to offer tools and datasets for describe open contents with certainty of openness at cited documents, and tools for measure of percentage of cited materials that are open, in contexts without this certainty.
 
 ### Applications
-The conclusions and datasets present in this project can be used in many contexts and applications... Some of them:
+The concepts, [report conclusions](https://github.com/ppKrauss/openCoherence/tree/master/reports) and [datasets](https://github.com/ppKrauss/openCoherence/tree/master/data) present in this project can be used in many contexts and applications... Some of them:
 * Taxonomy of repositorires (for "openness census");
 * Compare openness of documents, collections or repositories;
-* Support users to understand "default licences";
-* Support users to find "most open repositories", "most open authors", etc.
-* Support trials;
+* Calculate "openness indexes";
+* To support users to understand "default licenses";
+* To support users to find "most open" repositories, authors, etc.
+* Support to court trials (in request to open documents);
+* Vision of "open licence of node-document" (in "organic" document collections);
+* Expand the vision of "Freedom of Information" 
 * Open license marketing;
 * ...
 
