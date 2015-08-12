@@ -23,14 +23,14 @@ The *openness degree* is illustred here by the [CC licenses ordering](https://co
 
 For algorithmic or mathematical uses of the *openness degree*, we can adopt the following symbols and conventions:
 
-> *od*(*docX*)ϵ[0-7]&#8838;&#8469; &nbsp; is the `opennessDegree` of *docX*, inferred by its canonic licence, *canLic*(*docX*)ϵ{"cc0", "cc-by", ...}
+> *od*(*docX*)ϵ[0-7]&#8838;&#8469; &nbsp; is the `opennessDegree` of *docX*, inferred by its canonical license, *canLic*(*docX*)ϵ{"cc0", "cc-by", ...}
 
 > *od*(*repoX*)ϵ[0-7]&#8838;&#8477;<sup>+</sup> &nbsp; is the `opennessDegree` of *repoX*={*doc1*, *doc2*, ..., *doc_i*, ..., *docN*}
 
-where *docX* is a document and *repoX* is a repository, represented by a set of *N* documents. The range 0&#8209;7 is arbitrary (can be changed). A document with *od*(*docX*)=0 is for all range, from [classified](https://en.wikipedia.org/wiki/Classified_information) to [copyrighted](https://en.wikipedia.org/wiki/Copyright) documents. The `NULL` can be added in the domain, for the "unknown" semantic.
+where *docX* is a document and *repoX* is a repository, represented by a set of *N* documents. The range 0&#8209;7 is arbitrary (can be changed). A document with *od*(*docX*)=0 is any non-open, from [classified](https://en.wikipedia.org/wiki/Classified_information) to [copyrighted](https://en.wikipedia.org/wiki/Copyright) documents. The `NULL` can be added in the domain, for the "unknown license" semantic.
 The operational definition of *od*(*repoX*) can be expressed in terms of its *doc_i* and the [usual average](https://en.wikipedia.org/wiki/Arithmetic_mean) of *od*(*doc_i*) over the *N* documents.
 
-The same schema can be applyed to datasets and databases. Example: each CSV file at [OKFN dataset](https://github.com/datasets/) have an explicit license (most of it is [odc-pddl1](http://opendatacommons.org/licenses/pddl/1.0/)). Each database license can be associated with a "canonical" one, and all these canonical ranged in a  0&#8209;7 normalized interval (where 7 is the *public domain* or *odc-pddl1*).
+The same schema can be applyed to datasets and databases. Example: each CSV file at [OKFN dataset](https://github.com/datasets/) have an explicit license (most of it is [odc-pddl1](http://opendatacommons.org/licenses/pddl/1.0/)). Each dataset license can be associated with a "canonical" one, and all these canonical ranged in a  0&#8209;7 normalized interval (where 7 is the *public domain* or *odc-pddl1*).
 
 ### Coherence of law-doc collections
 When a collection have an explicit license, like [UK](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/) or [GE](https://www.govdata.de/dl-de/by-2-0) official law-doc collections, it is easy to audit: check if the license is in fact respected, comparing the coherence between observed openness of each law-doc in the country's repository, and the country's license for that collection.
@@ -68,7 +68,7 @@ Some documents need an "attachment", like appendix, external figures, external m
 
 As doc-attachs are explicit parts of the document, they are not subject to "relevance" interpretation, and, to be coherent, they **must use the same license** tham it's document.
 
-Technically a repo with *standard XML docucments* (like [JATS](https://en.wikipedia.org/wiki/Journal_Article_Tag_Suite) for sci-docs or [AKN](https://en.wikipedia.org/wiki/Akoma_Ntoso) form law-docs), where XML express doc-attach licences, we can check (by [XPath](https://en.wikipedia.org/wiki/XPath)) and calculate *od*(*attach_licence*) of each document. Supposing a document where its *M* attachments have *C*&le;*M* cases of *od*&le;`od_doc`: the <b>factor *C*/*M*</b> can be used to reduce `od_doc` or to express (as %) "lost of openness" in the document.
+Technically a repo with *standard XML docucments* (like [JATS](https://en.wikipedia.org/wiki/Journal_Article_Tag_Suite) for sci-docs or [AKN](https://en.wikipedia.org/wiki/Akoma_Ntoso) for law-docs), where XML express doc-attach licenses, we can check (by [XPath](https://en.wikipedia.org/wiki/XPath)) and calculate *od*(*attach_license*) of each document. Supposing a document where its *M* attachments have *C*&le;*M* cases of *od*&le;`od_doc`: the <b>factor *C*/*M*</b> can be used to reduce `od_doc` or to express (as %) "lost of openness" in the document.
 
 ### Citation coherence
 A complementar indicator of openness, [under discussion](https://github.com/okfn/opendefinition/wiki/Citation-alike-clauses-of-open-licenses-for-law#user-content-the-citation-alike-clause-and-observance), is checking the observance of the same or superior *openess degree* in a cited document (when [citing external sources](https://en.wikipedia.org/wiki/Wikipedia:Citing_sources)). When cited document have less *degree*,  we can say that the citation is not coherent.
@@ -80,11 +80,11 @@ In both, sci-docs and law-docs,  cited external documents, that are not in the s
 ## Objective
 The aim of this project is to offer a practical and theoretical *framework* (at least a proof of concept) to subsidise the characterization of "openness coherence" in repositories and collections, of scientific and legislative documents. Splitting into specific goals:
 
-* Show the *official collections*: via [`lawDocsRepos` dataset](./data/lawDocsRepos.csv), each contry's official law-doc repository.
+* Define the *official collections*: via [`lawDocsRepos` dataset](./data/lawDocsRepos.csv), each contry's official law-doc repository.
 
-* Show the  *official licenses*: via [`licenses` dataset](./data/licenses.csv) list all known licenses used in official repositories, and (after consensual interpretation) via [`inferredLicense` ](./reports) reports, show the "inferred licenses" of countries that use no explicit license.
+* Show the *official licenses*: via [`licenses` dataset](./data/licenses.csv) list all known licenses used in official repositories, and (after consensual interpretation) via [`inferredLicense` ](./reports) reports, show the "inferred licenses" of countries that use no explicit license.
 
-* *Coherence in official collections*: via [`lawDocsRepos` dataset](./data/lawDocsRepos.csv), describing official repositories, and [`lawDocs` dataset](./data/lawDocs.csv), sampling law-docs (as evidences); monitoring general cumpliance of the "expected licence" in all repository's documents. 
+* *Coherence in official collections*: via [`lawDocsRepos` dataset](./data/lawDocsRepos.csv), describing official repositories, and [`lawDocs` dataset](./data/lawDocs.csv), sampling law-docs (as evidences); monitoring general cumpliance of the "expected license" in all repository's documents. 
 
 * *Attach coherence*: registering evidences in *`lawDocExceptions` dataset*.
 
@@ -98,7 +98,7 @@ The concepts, [report conclusions](https://github.com/ppKrauss/openCoherence/tre
 * To support users to understand "default licenses";
 * To support users to find "most open" repositories, authors, etc.
 * Support to court trials (in request to open documents);
-* Vision of "open licence of node-document" (in "organic" document collections);
+* Vision of "open license of node-document" (in "organic" document collections);
 * Expand the vision of "Freedom of Information" 
 * Open license marketing;
 * ...
