@@ -19,7 +19,7 @@ The characterization of the "openness" of a document (or a set of documents as c
 
 ![The opennes degree](./reports/imgs/openessDeg-CC-licenses-short.png "The opennes degree")
 
-The *openness degree* is illustred here by the [CC licenses ordering](https://commons.wikimedia.org/wiki/File:Ordering_of_Creative_Commons_licenses_from_most_to_least_open.png), but it can be enhanced with more canonical licenses, taken from [OpenDefinition-conformant licenses](http://opendefinition.org/licenses/).
+The *openness degree* is illustred here by the [CC licenses ordering](https://commons.wikimedia.org/wiki/File:Ordering_of_Creative_Commons_licenses_from_most_to_least_open.png), but it can be enhanced with more canonical licenses, taken from [OpenDefinition-conformant licenses](http://opendefinition.org/licenses/). The ranking have some affinity with a simplification of the [D. A. Wheeler](http://www.dwheeler.com/essays/floss-license-slide.html)'s compatibility graph, but "legal compatibility" can be lost in the simplification, the scope of openness is only "access compatibility".
 
 For algorithmic or mathematical uses of the *openness degree*, we can adopt the following symbols and conventions:
 
