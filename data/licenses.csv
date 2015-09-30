@@ -1,21 +1,20 @@
-id_label,id_version,id,title,family,,status,domain_content,domain_data,domain_software,od_conformance,osd_conformance,maintainer,,url
-,,,,,,,openDegree,relCopyright,mainUse,url-full-text,url-machineReadable,,,
-a-drm,2.0,A-DRM-2.0,Against DRM,,,?,,copyleft,content,,,,,http://www.freecreations.org/Against_DRM2.html
-cc-by,4.0,CC-BY-4.0,Attribution alone,cc-by,,active,6,copyleft,content,,,,,https://creativecommons.org/licenses/by/4.0/legalcode
-cc-by-nc,4.0,CC-BY-NC-4.0,Attribution + Noncommercial,cc-by-nc,,active,3,copyleft,content,,,,,https://creativecommons.org/licenses/by-nc/4.0/legalcode
-cc-by-nc-nd,4.0,CC-BY-NC-ND-4.0,Attribution + Noncommercial + NoDerivatives,cc-by-nc-nd,,active,1,copyleft,content,,,,,https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
-cc-by-nc-sa,4.0,CC-BY-NC-SA-4.0,Attribution + Noncommercial + ShareAlike,cc-by-nc-sa,,active,2,copyleft,content,,,,,https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
-cc-by-nd,4.0,CC-BY-ND-4.0,Attribution + NoDerivatives,cc-by-nd,,active,4,copyleft,content,,,,,https://creativecommons.org/licenses/by-nd/4.0/legalcode
-cc-by-sa,4.0,CC-BY-SA-4.0,Attribution + ShareAlike,cc-by-sa,,active,5,copyleft,content,,,,,https://creativecommons.org/licenses/by-sa/4.0/legalcode
-cc0,1.0,CC0-1.0,Public Domain Dedication,cc0,,active,7,copyleft,content,,,,,http://creativecommons.org/publicdomain/zero/1.0/legalcode
-fal,1.3,FAL-1.3,Free Art License,cc-by,,?,6,copyleft,content,,,,,http://artlibre.org/licence/lal/en/
-gfdl,1.3,GFDL-1.3,GNU Free Documentation License,cc-by,,?,6,copyleft,content,,,,,https://gnu.org/licenses/fdl.html
-inferred-lex-br,1.0,Inferred-lex-BR-1.0,"(inffering by legislation analysis, report BR)",cc0,,restrict,7,copyleft,content,,,,,
-inferred-lex-it,1.0,Inferred-lex-IT-1.0,"(inffering by legislation analysis, report IT)",,,restrict,,copyleft,content,,,,,
-inferred-lex-us,1.0,Inferred-lex-US-1.0,"(inffering by legislation analysis, report US)",,,restrict,,copyleft,content,,,,,
-odbl,1.0,ODbL-1.0,Open Data Commons Open Database License,,,?,,copyleft,database,,,,,http://opendatacommons.org/licenses/odbl/1.0/
-odc-by,1.0,ODC-By-1.0,Open Data Commons Attribution License,,,?,,copyleft,database,,,,,
-ogl,3.0,OGL-3.0,Open Government Licence,cc-by,,active,6,Crown copyright,content,,http://reference.data.gov.uk/id/open-government-licence,,,http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
-opl,1.0,OPL-1.0,Open Publication License,cc-by,,?,6,copyleft,content,,,,,http://opencontent.org/openpub/
-pddl,1.0,PDDL-1.0,Open Data Commons Public Domain Dedication and License,,,?,,copyleft,database,,,,,http://opendatacommons.org/licenses/pddl/1.0/
-inferred-lex-il,1.0,Inferred-lex-IL-1.0,"(inffering by legislation analysis, report IL)",cc-by,,restrict,6,copyleft,content,,,,,
+id_label,id_version,id,family,openDegree,title,status,domain_content,domain_data,url
+a-drm,2,A-DRM-2.0,,,Against DRM,?,x,,http://www.freecreations.org/Against_DRM2.html
+cc-by,4,CC-BY-4.0,cc-by,6,Attribution alone,active,x,,https://creativecommons.org/licenses/by/4.0/legalcode
+cc-by-nc,4,CC-BY-NC-4.0,cc-by-nc,3,Attribution + Noncommercial,active,x,,https://creativecommons.org/licenses/by-nc/4.0/legalcode
+cc-by-nc-nd,4,CC-BY-NC-ND-4.0,cc-by-nc-nd,1,Attribution + Noncommercial + NoDerivatives,active,x,,https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+cc-by-nc-sa,4,CC-BY-NC-SA-4.0,cc-by-nc-sa,2,Attribution + Noncommercial + ShareAlike,active,x,,https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+cc-by-nd,4,CC-BY-ND-4.0,cc-by-nd,4,Attribution + NoDerivatives,active,x,,https://creativecommons.org/licenses/by-nd/4.0/legalcode
+cc-by-sa,4,CC-BY-SA-4.0,cc-by-sa,5,Attribution + ShareAlike,active,x,,https://creativecommons.org/licenses/by-sa/4.0/legalcode
+cc0,1,CC0-1.0,cc0,7,Public Domain Dedication,active,x,,http://creativecommons.org/publicdomain/zero/1.0/legalcode
+fal,1.3,FAL-1.3,cc-by,6,Free Art License,?,x,,http://artlibre.org/licence/lal/en/
+gfdl,1.3,GFDL-1.3,cc-by,6,GNU Free Documentation License,?,x,,https://gnu.org/licenses/fdl.html
+inferred-lex-br,1,Inferred-lex-BR-1.0,cc0,7,"(inffering by legislation analysis, report BR)",restrict,x,,
+inferred-lex-it,1,Inferred-lex-IT-1.0,,,"(inffering by legislation analysis, report IT)",restrict,x,,
+inferred-lex-us,1,Inferred-lex-US-1.0,,,"(inffering by legislation analysis, report US)",restrict,x,,
+odbl,1,ODbL-1.0,,,Open Data Commons Open Database License,?,,x,http://opendatacommons.org/licenses/odbl/1.0/
+odc-by,1,ODC-By-1.0,,,Open Data Commons Attribution License,?,,x,
+ogl,3,OGL-3.0,cc-by,6,Open Government Licence,active,x,,http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+opl,1,OPL-1.0,cc-by,6,Open Publication License,?,x,,http://opencontent.org/openpub/
+pddl,1,PDDL-1.0,,,Open Data Commons Public Domain Dedication and License,?,,x,http://opendatacommons.org/licenses/pddl/1.0/
+inferred-lex-il,1,Inferred-lex-IL-1.0,cc-by,6,"(inffering by legislation analysis, report IL)",restrict,x,,
