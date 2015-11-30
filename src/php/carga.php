@@ -6,8 +6,8 @@
 // // // //
 // CONFIGURACOES:
 $PG_USER = 'postgres';
-$PG_PW   = 'XXXXX'; 
-$pasta =  '/xxxx/openCoherence/data';
+$PG_PW   = 'xxx'; 
+$pasta =  '/xxx/openCoherence/data';
 
 
 $n=0;
@@ -73,6 +73,7 @@ foreach (scandir($pasta2) as $file) if (strlen($file)>3) {
 	$pid = preg_replace('/\.xml/i','',$file);
 	//print "\n --  $file";
 	$cont = file_get_contents("$pasta2/$file");
+	// check by fileaname for samples. 
 	$stmt->bindParam(':repo',$dft_repo,PDO::PARAM_STR);
 
 	$stmt->bindParam(':pid',$pid,PDO::PARAM_STR);
