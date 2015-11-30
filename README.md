@@ -42,8 +42,8 @@ Check by SQL query... Examples:
 
  SELECT * FROM oc.dtds;
 
- SELECT id,repos_pid, (xpath('//front//abstract[1]',xcontent))[1] as abstract
- FROM oc.docs;
+ SELECT id,repo,repos_pid, (xpath('//front//abstract[1]',xcontent))[1] as abstract
+ FROM oc.docs WHERE kx->>'article_type'='research-article';
          
  SELECT id,repos_pid, 
    (xpath('//front/permissions/license',xcontent)::text as license_for_human
