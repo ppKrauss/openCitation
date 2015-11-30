@@ -67,33 +67,40 @@ foreach($FILES as $f=>$items) {
 // INSERT de teste com as ~2mil amostras do SciELO-BR 
 $stmt = $db->prepare( "SELECT oc.docs_upsert(:repo::text,:dtd::text,:pid::text,:xcontent::xml,NULL::JSON)" );
 $pasta2 = "$pasta/samples";
-$dft_repo = 'scielo-br';
-foreach (scandir($pasta2) as $file) if (strlen($file)>3) {
-	$n++;
-	$pid = preg_replace('/\.xml/i','',$file);
-	//print "\n --  $file";
-	$cont = file_get_contents("$pasta2/$file");
-	// check by fileaname for samples. 
-	$stmt->bindParam(':repo',$dft_repo,PDO::PARAM_STR);
+$n=$n2=0;
+foreach (scandir($pasta2) as $dtype) if (strlen($dtype)>2) {
+	$pasta3 = "$pasta2/$dtype";
+	foreach (scandir($pasta3) as $dft_repo) if (strlen($dft_repo)>2)
+		foreach (scandir("$pasta3/$dft_repo") as $file) if (strlen($file)>2) {
+			$n++;
+			//print "\n--$n-- $pasta3 ($dft_repo) $file ";
+			$pid = preg_replace('/\.xml/i','',$file);
+			$f = "$pasta3/$dft_repo/$file";
+			$cont = file_get_contents($f);
+			if (!$cont) 
+				die("\n-- empty file: $f");
+			// check by fileaname for samples. 
+			$stmt->bindParam(':repo',$dft_repo,PDO::PARAM_STR);
 
-	$stmt->bindParam(':pid',$pid,PDO::PARAM_STR);
+			$stmt->bindParam(':pid',$pid,PDO::PARAM_STR);
 
-	$doctype = preg_match($rgx_doctype,$cont,$m)? $m[1]: '';
-	$doctype = preg_replace('/\s+/s',' ',$doctype);
-	if ($doctype) 
-		$cont = preg_replace($rgx_doctype, '', $cont);
-	$stmt->bindParam(':dtd',$doctype,PDO::PARAM_STR);
+			$doctype = preg_match($rgx_doctype,$cont,$m)? $m[1]: '';
+			$doctype = preg_replace('/\s+/s',' ',$doctype);
+			if ($doctype) 
+				$cont = preg_replace($rgx_doctype, '', $cont);
+			$stmt->bindParam(':dtd',$doctype,PDO::PARAM_STR);
 
-	// $stmt->bindParam(':conteudo',$XHEAD.$cont,PDO::PARAM_STR);
-	$stmt->bindParam(':xcontent',$cont,PDO::PARAM_STR);
+			// $stmt->bindParam(':conteudo',$XHEAD.$cont,PDO::PARAM_STR);
+			$stmt->bindParam(':xcontent',$cont,PDO::PARAM_STR);
 
-	$re = $stmt->execute();
+			$re = $stmt->execute();
 
-	if (!$re) {
-		print_r($stmt->errorInfo());
-		die("\n-- ERROR at $file, not saved\n");
-	}
-}
+			if (!$re) {
+				print_r($stmt->errorInfo());
+				die("\n-- ERROR at $file, not saved\n");
+			}
+		} // xml files
+} // doc types
 
 print "\n$n XML docs of '$dft_repo' inserted\n\n";
 // // END:CARGA docs
