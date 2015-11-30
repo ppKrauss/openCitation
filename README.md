@@ -13,7 +13,7 @@ In both (sci-docs and law-docs) the content is published by an authority, like a
 
 ## UNDER CONSTRUCTION
 
-For draft presentation, see [README.old.md](README.old.md).
+For draft presentation, see [README.old.md](_olds/README.old.md).
 
 Shared datasheet with friendly interface to edit CSV sources:
 
