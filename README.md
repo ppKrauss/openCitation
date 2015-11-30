@@ -10,6 +10,19 @@ Legal and scientific documents are typical [free contents](https://en.wikipedia.
 
 In both (sci-docs and law-docs) the content is published by an authority, like a [scientific journal](https://en.wikipedia.org/wiki/Scientific_journal) or a [government gazette](https://en.wikipedia.org/wiki/Government_gazette). Only official versions of the documents possess legal probative value. The *official repositories* preserves the documents and its  probative value.
 
+
+## UNDER CONSTRUCTION
+
+Shared datasheet with friendly interface to edit CSV sources:
+
+ * [openCoherenceDataset-licenses](https://docs.google.com/spreadsheets/d/17RwlPayXj2IBIBszp4wKMdK7OwwPqX125WmF3XFzM0A/edit?usp=sharing)
+
+ * [openCoherenceDataset-repos](https://docs.google.com/spreadsheets/d/1HrMi0qWjvnEjX3kRD_1o4DJ8U4P7EBv1tx8Euw09K80/edit?usp=sharing)
+
+
+
+------
+
 ### Openness degree of a license
 The characterization of the "openness" of a document (or a set of documents as collection or repository) can be formalized by the following procedure (simplifyed by the [licenses table](./data/licenses.csv)):
 

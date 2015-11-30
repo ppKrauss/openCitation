@@ -1,0 +1,172 @@
+{
+  "name": "openCitation",
+  "title": "Open Citation data and tools, draft1",
+  "sources": [
+    {
+      "name":"Many..."
+    }
+  ],
+  "licenses": [
+	  {
+		  "id": "odc-pddl",
+		  "name": "Public Domain Dedication and License",
+		  "version": "1.0",
+		  "url": "http://opendatacommons.org/licenses/pddl/1.0/"
+	  }
+	],
+  "resources": [
+    {
+      "name": "licenses",
+      "path": "data/licenses.csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "abbrev",
+            "description":"Name abbreviation",
+            "type": "string"
+          },
+          {
+            "name": "last-version",
+            "description":"most updated version",
+            "type": "string"
+          },
+
+          {
+            "name": "name",
+            "description":"Name or description",
+            "type": "string"
+          },
+          {
+            "name": "wikidataID",
+            "description":"ID in Wikidata.org",
+            "type": "string"
+          },
+          {
+            "name": "wikidataID-rel",
+            "description":"semantic relation to wikidataID: exact, relat or subclass",
+            "type": "string"
+          },
+          {
+            "name": "CC-similar",
+            "description":"most similar Creative Commons license",
+            "type": "string"
+          },
+          {
+            "name": "relCopyright",
+            "description":"if some, related copyright; default copyleft",
+            "type": "string"
+          },
+          {
+            "name": "url-full-text",
+            "description":"URL of the official full-text license",
+            "type": "string"
+          }
+	]
+      }
+    },
+    {
+      "name": "lawDocs",
+      "path": "data/lawDocs.csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "country",
+            "description":"ISO's 2 letter alpha-2 code",
+            "type": "string"
+          },
+          {
+            "name": "doc-type",
+            "description":"Label for autorithy and document type, as expressed in the document or its URN or its ID",
+            "type": "string"
+          },
+          {
+            "name": "doc-year",
+            "description":"Year of the first official publication (as expressed in the document or URN)",
+            "type": "string"
+          },
+          {
+            "name": "doc-code",
+            "description":"Complements for unique identification, as expressed in the document or its URN or its ID",
+            "type": "string"
+          },
+          {
+            "name": "license",
+            "description":"key (abbrev name) of the explicit or inferred license",
+            "type": "string"
+          },
+          {
+            "name": "licenseMode",
+            "description":"mode of license expression in the document, implicit or explicit",
+            "type": "string"
+          },
+          {
+            "name": "url-html",
+            "description":"URL of the official HTML version of the document",
+            "type": "string"
+          },
+          {
+            "name": "url-pdf",
+            "description":"URL of the official PDF version of the document",
+            "type": "string"
+          }
+	]
+      }
+    },
+    {
+      "name": "lawDocsRepos",
+      "path": "data/lawDocsRepos.csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "country",
+            "description":"ISO's 2 letter alpha-2 code",
+            "type": "string"
+          },
+          {
+            "name": "legalSys",
+            "description":"legal system of the country, civil law, common law, etc.",
+            "type": "string"
+          },
+          {
+            "name": "BerneConv",
+            "description":"(perhaps redundant information) yes when country is a signatary of Berne Convention",
+            "type": "string"
+          },
+          {
+            "name": "license",
+            "description":"key (abbrev name) of the explicit or inferred license",
+            "type": "string"
+          },
+          {
+            "name": "legis-wikidataID",
+            "description":"ID in Wikidata.org of the country's legislation description",
+            "type": "string"
+          },
+          {
+            "name": "legis-wikidataID-rel",
+            "description":"semantic relation to legis-wikidataID, exact, relat or subclass",
+            "type": "string"
+          },
+          {
+            "name": "repo-wikidataID",
+            "description":"ID in Wikidata.org of the country's official digital repository of law-documents",
+            "type": "string"
+          },
+          {
+            "name": "repo-wikidataID-rel",
+            "description":"semantic relation to repo-wikidataID, exact, relat or subclass",
+            "type": "string"
+          },
+          {
+            "name": "url-lawDocsRepository",
+            "description":"English name of language",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
