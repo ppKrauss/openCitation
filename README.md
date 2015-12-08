@@ -21,6 +21,8 @@ Shared datasheet with friendly interface to edit CSV sources:
 
  * [openCoherenceDataset-repos](https://docs.google.com/spreadsheets/d/1HrMi0qWjvnEjX3kRD_1o4DJ8U4P7EBv1tx8Euw09K80/edit?usp=sharing)
 
+![SQL table illustration](_docs/sql_tables.png)
+
 ## Install
 
 Use Postgresql 9.3+.
