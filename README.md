@@ -23,20 +23,31 @@ Shared datasheet with friendly interface to edit CSV sources:
 
 ## Install
 
-Use Postgresql 9.3+.
+Use PostgreSQL 9.3+.
 
- 1. run [ini.sql](src/ini.sql).
- 2. run from git root [`php src/php/carga.php`](src/php/carga.php).
+ 1. get all from github
+ 2. configure database, configure parameters at [ini.php](src/ini.sql).
+ 3. run [ini.sql](src/ini.sql).
+ 4. run [`ini.php`](src/php/ini.php).
+
+Summarizing:
+```bash
+git clone https://github.com/ppKrauss/dataset_licenses.git
+git clone https://github.com/ppKrauss/openCoherence.git
+psql -h localhost -U postgres postgres < openCoherence/src/ini.sql
+php openCoherence/src/php/ini.php
+```
 
 Check by SQL query... Examples:
 
 ```sql
- SELECT * FROM oc.docs;
+ SELECT * FROM oc.licenses; -- as https://github.com/ppKrauss/dataset_licenses/blob/master/data/licenses.csv
 
  SELECT id,repos_pid, 
 	kx->>'article_type' as type, 
 	kx->>'article_title' as title
- FROM oc.docs;
+ FROM oc.docs
+ WHERE xcontent IS NOT NULL;
 
  SELECT * FROM oc.repositories;
 
@@ -45,8 +56,8 @@ Check by SQL query... Examples:
  SELECT id,repo,repos_pid, (xpath('//front//abstract[1]',xcontent))[1] as abstract
  FROM oc.docs WHERE kx->>'article_type'='research-article';
          
- SELECT id,repos_pid, 
-   (xpath('//front/permissions/license',xcontent)::text as license_for_human
+ SELECT id,xcontent,repos_pid, 
+   (xpath('//front//permissions[1]/license[1]',xcontent))[1]::text as license_for_human
  FROM oc.docs WHERE kx->>'license_url'='';
 ```
 
