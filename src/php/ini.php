@@ -8,11 +8,11 @@
 // // // //
 // CONFIGS:
 $PG_USER = 'postgres';
-$PG_PW   = 'pp@123456'; 
+$PG_PW   = 'xxx'; 
 $dsn="pgsql:dbname=postgres;host=localhost";
 $projects = [
-	'dataset_licences'=>'/home/peter/gits/dataset_licenses',
-	'openCoherence'=>   '/home/peter/gits/openCoherence'
+	'dataset_licences'=>'/xxx/gits/dataset_licenses',
+	'openCoherence'=>   '/xxx/gits/openCoherence'
 ];
 
 // // // // //
