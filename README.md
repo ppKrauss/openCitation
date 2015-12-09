@@ -10,7 +10,6 @@ Legal and scientific documents are typical [free contents](https://en.wikipedia.
 
 In both (sci-docs and law-docs) the content is published by an authority, like a [scientific journal](https://en.wikipedia.org/wiki/Scientific_journal) or a [government gazette](https://en.wikipedia.org/wiki/Government_gazette). Only official versions of the documents possess legal probative value. The *official repositories* preserves the documents and its  probative value.
 
-
 ## UNDER CONSTRUCTION
 
 For draft presentation, see [README.old.md](_olds/README.old.md).
@@ -21,6 +20,8 @@ Shared datasheet with friendly interface to edit CSV sources:
 
  * [openCoherenceDataset-repos](https://docs.google.com/spreadsheets/d/1HrMi0qWjvnEjX3kRD_1o4DJ8U4P7EBv1tx8Euw09K80/edit?usp=sharing)
 
+These curated data are transferred to here as [CSV+JSON](http://data.okfn.org/doc/tabular-data-package) files, and handled as SQL (and SQL+JSON) related tables, as implmented by [`ini.sql`](src/ini.sql) and illustrated below.  
+
 ![SQL table illustration](_docs/sql_tables.png)
 
 ## Install
@@ -29,7 +30,7 @@ Use PostgreSQL 9.3+.
 
  1. get all from github
  2. configure database, configure parameters at [ini.php](src/ini.sql).
- 3. run [ini.sql](src/ini.sql).
+ 3. run [`ini.sql`](src/ini.sql).
  4. run [`ini.php`](src/php/ini.php).
 
 Summarizing:
