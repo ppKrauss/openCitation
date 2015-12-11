@@ -8,17 +8,18 @@
 // // // //
 // CONFIGS:
 $PG_USER = 'postgres';
-$PG_PW   = 'xxx'; 
+$PG_PW   = 'pp@123456'; 
 $dsn="pgsql:dbname=postgres;host=localhost";
 $projects = [
-	'dataset_licences'=>'/xxx/gits/dataset_licenses',
-	'openCoherence'=>   '/xxx/gits/openCoherence'
+	'licences'=>'/home/peter/gits/licenses',
+	'openCoherence'=>   '/home/peter/gits/openCoherence'
 ];
+
 
 // // // // //
 // SQL PREPARE
 $items = [
-	'dataset_licences'=>[
+	'licences'=>[
 		array('INSERT INTO oc.license_families (fam_name, fam_info) VALUES (:name::text, :json_info::JSON)',
 			'families.csv'
 		)
@@ -34,7 +35,10 @@ $items = [
 		)
 	],
 	'openCoherence'=>[
-		array("INSERT INTO oc.repositories(repo_label,repo_name,repo_wikidataID,repo_url,repo_info) 
+		array("SELECT oc.cached_xpaths_upsert(:jkey_group::int, :jkey::text, :transducer::int, :xpath_str::text, :dtds::text, :xpath_ns::text)",
+			'xpathTransducers.csv::bind'
+		)
+		,array("INSERT INTO oc.repositories(repo_label,repo_name,repo_wikidataID,repo_url,repo_info) 
 		              VALUES (:label, :name, :repo_wikidataID, :url, :json_info)",
 			'sciRepos.csv', 'lawRepos.csv'
 		)
@@ -46,6 +50,7 @@ $items = [
 	]
 ];
 $sql_delete = '
+	DELETE FROM oc.cached_xpaths;
 	DELETE FROM oc.licenses;
 	DELETE FROM oc.license_families;
 	DELETE FROM oc.docs;
@@ -66,14 +71,14 @@ foreach($items as $prj=>$r)
 	$sql = array_shift($dataset);
 	print "\n\n---- PRJ $prj (($sql))";
 	$stmt = $db->prepare($sql);
-	$pack = json_decode( file_get_contents("$folder/datapackage.json"), true );
+	$jpack = json_decode( file_get_contents("$folder/datapackage.json"), true );
 	$ds = array(); // only for "bind check".
 	foreach($dataset as $i) {
 		$i = str_replace('::bind','',$i,$bind);
 		$ds["data/$i"] = $bind;
 	}
 	$ds_keys = array_keys($ds);
-	foreach($pack['resources'] as $pack)
+	foreach($jpack['resources'] as $pack)
 	  if ( in_array($pack['path'],$ds_keys) ) {
 		print "\n\t-- reding dataset '$pack[path]' ";
 		$fields = $pack['schema']['fields'];
@@ -90,7 +95,7 @@ foreach($items as $prj=>$r)
 			if ($ds[$pack['path']]) { // to do: bind string/int/no PDO::datatypes
 				$tmp = $sqls;
 				foreach($sql_fields as $i) $stmt->bindParam(":$i", array_shift($tmp));
-				if ($info) $stmt->bindParam(":json_info", $info);
+				if (count($json_fields) && $info) $stmt->bindParam(":json_info", $info);
 				$ok = $stmt->execute();
 			} else // implicit bind (by array order and no datatype parsing)
 				$ok = $stmt->execute( array_merge($sqls,array($info)) );
@@ -100,7 +105,8 @@ foreach($items as $prj=>$r)
 				print_r($stmt->errorInfo());
 				die("\n");
 			} else $n2++;
-		  } else {
+		  } elseif ($nsql>0 && count($sql_fields) && isset($lin) && count($lin) && $lin!=array()) {
+			//debug print "\n-pk-$n2...0-$nsql \nlin=".count($lin);print_r($lin);
 			$lin_check = fields_to_parts( array_slice($lin,0,$nsql) );
 			if ($sql_fields!= $lin_check){
 				var_dump($lin_check);
@@ -119,7 +125,7 @@ foreach($items as $prj=>$r)
 			foreach (scandir("$folder2/$ft") as $rpfolder) if (strlen($rpfolder)>2)
 				intoDb_XMLs("$folder2/$ft/$rpfolder",$db,$rpfolder); // scans repository's folder
 	}
-	foreach ($ds as $k=>$v) print "\n --WARNING: pack $k (bind=$v) not used";
+	foreach ($ds as $k=>$v) print "\n --WARNING: pack '$k' (bind=$v) not used";
   } // for $r
 
 
@@ -129,13 +135,15 @@ foreach($items as $prj=>$r)
 function fields_to_parts($fields,$only_names=true) {
 	$sql_fields = array();
 	$json_fields = array();
-	foreach($fields as $ff) {
+	if (count($fields)) {
+	  foreach($fields as $ff) {
 		$name = str_replace('-','_',strtolower($only_names? $ff: $ff['name']));
 		if ( !$only_names && isset($ff['role']) ) {   // e outros recursos do prepare
 			$sql_fields[]  = $name;
 		} else
 			$json_fields[] = $name;
-	}
+	   } // for
+	} // else return ... 
 	return ($only_names? $json_fields: array($sql_fields,$json_fields));
 }
 

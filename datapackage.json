@@ -69,6 +69,51 @@
       }
     },
     {
+      "name": "XPath Transducers",
+      "path": "data/xpathTransducers.csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "jkey_group",
+            "role": "master",
+            "description":"labeling the group by a number",
+            "type": "integer"
+          },																			
+          {
+            "name": "jkey",
+            "role": "master",
+            "description":"Key of the JSON key-value",
+            "type": "string"
+          },
+          {
+            "name": "transducer",
+            "role": "master",
+            "description":"ID of the transducer type, see SQL lib.xpath_to_char()",
+            "type": "integer"
+          },
+          {
+            "name": "xpath_str",
+            "role": "master",
+            "description":"a XPath expression",
+            "type": "string"
+          },
+          {
+            "name": "dtds",
+            "role": "master",
+            "description":"list of DTD-IDs, for sql array export",
+            "type": "string"
+          },
+          {
+            "name": "xpath_ns",
+            "role": "master",
+            "description":"XPath namespace or 'NULL'",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
       "name": "sciRepos",
       "path": "data/sciRepos.csv",
       "mediatype": "text/csv",

@@ -3,6 +3,7 @@
 -- psql -h localhost -U postgres oc_database < openCoherence/src/ini.sql
 --
 
+DROP SCHEMA IF EXISTS oc CASCADE;
 CREATE SCHEMA oc;
 
 -- -- -- --
@@ -93,21 +94,59 @@ CREATE TABLE oc.docs (
   UNIQUE (repos_pid)
 );
 
-------
--- basics inserts (config with no CSV need)
-INSERT INTO oc.dtds (dtd_id, dtd_label, dtd_label_family, dtd_label_vers, dtd_domain,dtd_doctype_string,url_definition) VALUES
-  (1,'jats-v1.0', 'jats',1.0, 'sci',
-   'article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd"',
-   'http://jats.nlm.nih.gov/publishing/tag-library/1.0/')
-  ,(2,'jats-v1.1', 'jats',1.0,'sci',
-   'article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.1 20150430//EN" "JATS-journalpublishing1.1.dtd"',
-   'http://jats.nlm.nih.gov/publishing/tag-library/1.1d3')
-  ,(3,'nlm-v3.0', 'jats','nlm-3.0', 'sci',
-   'article PUBLIC "-//NLM//DTD Journal Publishing DTD v3.0 20080202//EN" "http://dtd.nlm.nih.gov/publishing/3.0/journalpublishing3.dtd"',
-   'http://dtd.nlm.nih.gov/publishing/tag-library/3.0/index.html')
-  ,(4,'lexml-v1.0', 'lexml','1.0', 'law', NULL, 'http://projeto.lexml.gov.br/documentacao/Parte-3-XML-Schema.pdf')
-  ,(5,'akn-v1.0', 'akn','1.0', 'law', NULL, 'http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csd01/part2-specs/schemas')
-;
+
+-- -- --
+-- COMPLEMENTS
+--
+
+CREATE FUNCTION oc.dtds_check_fks(int[]) RETURNS int AS $script$
+    SELECT COALESCE(count(*)::int,0) 
+    FROM oc.dtds  WHERE dtd_id IN (SELECT unnest($1));
+$script$ LANGUAGE sql  IMMUTABLE;
+
+
+CREATE TABLE oc.cached_xpaths (
+  id serial PRIMARY KEY,
+  jkey_group int NOT NULL DEFAULT 1, -- for jkey namespace.
+  jkey varchar(64) NOT NULL,  	-- JSON key in the key-value pair
+  transducer int NOT NULL, 	-- lib.xpath_to_char() transducer param.
+  dtds int[], -- see oc.cached_xpaths_check() for REFERENCES oc.dtds(dtd_id)
+  xpath_str text NOT NULL, 	-- string of the xpath
+  xpath_ns text[],		-- namespaces of the xpath
+  UNIQUE(jkey_group,jkey,dtds),
+  UNIQUE(jkey_group,xpath_str,dtds),
+  CHECK(oc.dtds_check_fks(dtds)=array_length(dtds,1))
+);
+
+
+CREATE OR REPLACE FUNCTION oc.docs_getmetada(p_dtd int, p_xcontent xml, p_kxgroup int DEFAULT 1) RETURNS JSON AS $$
+-- 
+-- get metadata from XML supposing p_dtd.
+--
+  SELECT ('{'|| 
+  array_to_string( 
+    array_agg(
+      '"'|| c.jkey || '":' || lib.xpath_to_char(c.xpath_str, p_xcontent, c.transducer, c.xpath_ns) 
+    ), 
+    ',',
+    '"":""'
+  ) ||'}' )::JSON
+  FROM oc.cached_xpaths c
+  WHERE p_kxgroup=c.jkey_group AND p_dtd=ANY(c.dtds);
+$$ LANGUAGE sql;
+
+
+CREATE FUNCTION oc.docs_kx_refresh(int DEFAULT NULL, int DEFAULT NULL) 
+--
+-- Cache refresh of all rows, a row by id1, or a range of rows by id1,id2.
+-- usado apenas para o caso de ter alterado docs_getmetada.
+--
+RETURNS void AS $script$
+	UPDATE oc.docs  -- article's cache
+	SET kx = oc.docs_getmetada(dtd,xcontent)
+	WHERE $1 IS NULL OR ($2 IS NULL AND id=$1) OR (id>=$1 AND id<=$2);
+$script$ LANGUAGE sql;
+
 
 -- -- --
 -- TRIGGERS
@@ -123,7 +162,6 @@ CREATE OR REPLACE FUNCTION oc.license_families_refresh() RETURNS trigger AS $scr
 $script$ LANGUAGE plpgsql;
 CREATE TRIGGER license_families_refresh BEFORE INSERT OR UPDATE ON oc.license_families
     FOR EACH ROW EXECUTE PROCEDURE oc.license_families_refresh();
-
 
 -- -- --
 -- UPSERTS
@@ -198,56 +236,127 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- -- --
--- COMPLEMENTS
---
 
-CREATE OR REPLACE FUNCTION oc.docs_getmetada(p_dtd int, p_xcontent xml) RETURNS JSON AS $$
--- 
--- get metadata from XML supposing p_dtd. !To review: COALESCE exclude attribute, instead empty value.
--- Need also the license_url translation to standard label, and the attribute "license_url_confidence" (exact=1,interpreted=0.1 to 0.9)
---
+CREATE OR REPLACE FUNCTION oc.cached_xpaths_upsert(
+	p_jkey_group int, p_jkey text, 
+	p_transducer int, p_xpath text, 
+	p_dtds text, p_ns text
+) RETURNS integer AS $$
+DECLARE
+  rid int;
+  q_ns text[];
+  q_dtds int[];
 BEGIN
-  CASE p_dtd
-  WHEN 1,2,3 THEN   -- sci JATS research-article docs:
-	RETURN ('{'
-	||'"jou_acronimo":' ||to_json((xpath('/article/front/journal-meta/journal-id[@journal-id-type="publisher-id"]/text()', $2))[1]::text)
-	||', "doi": "'|| COALESCE((xpath('/article/front/article-meta/article-id[@pub-id-type="doi"]/text()', $2))[1]::text,'') ||'"'
-	||', "article_type":'  ||to_json((xpath('/article/@article-type', $2))[1]::text)
-	||', "article_title":' ||to_json(array_to_string( (xpath('/article/front//article-title//text()', $2))::text[], '', ' '))
-	||', "license_url":' ||COALESCE(to_json((xpath('//permissions/license/@n:href',$2,'{{n,http://www.w3.org/1999/xlink}}'))[1]::text),'""')
-	|| '}')::JSON;
-  -- WHEN 4 THEN  ... others... 
-  ELSE
-	RETURN ('{}')::JSON;
-  END CASE;
+IF ($1 IS NULL or $2 is NULL or $3 is null or $4 is null) THEN
+	RETURN 0;
+ELSE 
+	IF p_dtds IS NULL OR trim(p_dtds)='' OR trim(p_dtds)='{}' THEN 
+		q_dtds = '{1}'::int[];
+	ELSE
+		q_dtds = p_dtds::int[];
+	END IF;
+	IF p_ns IS NULL OR trim(p_ns)='' OR trim(p_ns)='{}' THEN 
+		q_ns = NULL::text[];
+	ELSE
+		q_ns = p_ns::text[];
+	END IF;
+	INSERT INTO oc.cached_xpaths (jkey_group,jkey,transducer,xpath_str,dtds,xpath_ns) 
+	VALUES ($1,$2,$3,p_xpath,q_dtds,q_ns) RETURNING id INTO rid;
+	RETURN rid::int;
+END IF;
 END;
 $$ LANGUAGE plpgsql;
 
-
-CREATE FUNCTION oc.docs_kx_refresh(int DEFAULT NULL, int DEFAULT NULL) 
---
--- Cache refresh of all rows, a row by id1, or a range of rows by id1,id2.
--- usado apenas para o caso de ter alterado docs_getmetada.
---
-RETURNS void AS $script$
-	UPDATE oc.docs  -- article's cache
-	SET kx = oc.docs_getmetada(dtd,xcontent)
-	WHERE $1 IS NULL OR ($2 IS NULL AND id=$1) OR (id>=$1 AND id<=$2);
-$script$ LANGUAGE sql;
-
-
 -- -- -- -- -- --
--- 
--- global util functions
---
-CREATE FUNCTION coalesce2(text,text DEFAULT NULL) RETURNS text AS
-$BODY$
-  SELECT CASE WHEN $1 IS NULL OR $1='' THEN $2 ELSE $1 END;
-$BODY$ LANGUAGE sql IMMUTABLE;
+-- -- -- -- -- --
+-- Basics inserts (config with no CSV need)
+-- -- -- -- -- --
+INSERT INTO oc.dtds (dtd_id, dtd_label, dtd_label_family, dtd_label_vers, dtd_domain,dtd_doctype_string,url_definition) VALUES
+  (1,'jats-v1.0', 'jats',1.0, 'sci',
+   'article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd"',
+   'http://jats.nlm.nih.gov/publishing/tag-library/1.0/')
+  ,(2,'jats-v1.1', 'jats',1.0,'sci',
+   'article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.1 20150430//EN" "JATS-journalpublishing1.1.dtd"',
+   'http://jats.nlm.nih.gov/publishing/tag-library/1.1d3')
+  ,(3,'nlm-v3.0', 'jats','nlm-3.0', 'sci',
+   'article PUBLIC "-//NLM//DTD Journal Publishing DTD v3.0 20080202//EN" "http://dtd.nlm.nih.gov/publishing/3.0/journalpublishing3.dtd"',
+   'http://dtd.nlm.nih.gov/publishing/tag-library/3.0/index.html')
+  ,(4,'lexml-v1.0', 'lexml','1.0', 'law', NULL, 'http://projeto.lexml.gov.br/documentacao/Parte-3-XML-Schema.pdf')
+  ,(5,'akn-v1.0', 'akn','1.0', 'law', NULL, 'http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csd01/part2-specs/schemas')
+;
+
 
 
 -- -- 
 -- OPS
 -- sample error, "S0100-06832011000500001" is not "research-article" (carta)
+
+
+-- -- -- -- -- --
+-- -- -- -- -- --
+-- -- -- -- -- --
+
+-- -- -- -- -- --
+-- 
+-- lib util functions, general use. Manage it in separate way.
+--
+
+DROP SCHEMA IF EXISTS lib CASCADE;
+CREATE SCHEMA lib;
+
+CREATE FUNCTION lib.coalesce2(text,text DEFAULT NULL) RETURNS text AS
+$BODY$
+  SELECT CASE WHEN $1 IS NULL OR $1='' THEN $2 ELSE $1 END;
+$BODY$ LANGUAGE sql IMMUTABLE;
+
+-- 
+
+
+CREATE OR REPLACE FUNCTION lib.xpath_to_char(
+--
+-- XPath to text. As to_char(date) the lib.xpath_to_char() functions are parsers. 
+--
+	p_xp text, -- a XPath expression
+	p_xml xml, -- the XML content
+	p_transducer int, -- the "xpath transducer" code.
+	p_nsarray text[] DEFAULT ARRAY[ARRAY['x', 'http://x.x']] -- XPath's namespace handling 
+) RETURNS text AS $$
+	  SELECT CASE p_transducer 
+	  WHEN 0 THEN (xpath(p_xp,p_xml,q_ns))[1]::text  	-- first occurence (optimized when xpath select [1])
+	  WHEN 1 THEN COALESCE( (xpath(p_xp,p_xml,q_ns))[1]::text, '') 	-- 0+coalesce
+	  WHEN 2 THEN to_json( (xpath(p_xp,p_xml,q_ns))[1]::text )::text 	-- 0+json
+	  WHEN 3 THEN to_json( COALESCE((xpath(p_xp,p_xml,q_ns))[1]::text,'') )::text 	-- 1+json
+	  WHEN 4 THEN array_to_string( (xpath(p_xp,p_xml,q_ns))::text[], '') 	-- all elements reduced 
+	  WHEN 5 THEN array_to_string( (xpath(p_xp,p_xml,q_ns))::text[], '', '')	-- 4+coalesce
+	  WHEN 6 THEN to_json( array_to_string((xpath(p_xp,p_xml,q_ns))::text[],'') )::text 	-- 4+json 
+	  WHEN 7 THEN to_json( array_to_string((xpath(p_xp,p_xml,q_ns))::text[],'','') )::text 	-- 5+json
+	END
+	FROM (SELECT CASE WHEN p_nsarray IS NULL THEN ARRAY[ARRAY['x', 'http://x.x']]::text[] ELSE p_nsarray END as q_ns) as t;
+$$ LANGUAGE sql IMMUTABLE;
+
+
+CREATE OR REPLACE FUNCTION lib.xpath_to_char(
+	p_xp text, -- a XPath expression
+	p_xml xml, -- the XML content
+	p_transducer text DEFAULT '', -- transducer syntax '[first|all]? json? coalesce?' 
+	p_nsarray text[] DEFAULT ARRAY[ARRAY['x', 'http://x.x']] -- XPath's namespace handling 
+) RETURNS text AS $$
+	SELECT lib.xpath_to_char(p_xp,p_xml,
+		CASE lower(trim(p_transducer))
+		WHEN ''  THEN 0
+		WHEN 'first' THEN 0
+		WHEN 'coalesce'  THEN 1
+		WHEN 'first coalesce' THEN 1
+		WHEN 'json' THEN 2
+		WHEN 'first json' THEN 2
+ 		WHEN 'json coalesce' THEN 3
+ 		WHEN 'first json coalesce' THEN 3 		
+		WHEN 'all' THEN 4
+		WHEN 'all coalesce' THEN 5
+		WHEN 'all json' THEN 6
+ 		WHEN 'all json coalesce' THEN 7
+		ELSE 0
+		END
+	,p_nsarray);
+$$ LANGUAGE sql IMMUTABLE;
 
