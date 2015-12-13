@@ -87,7 +87,7 @@ So, we can infer  that it is an license clause, an exigence for  the reproductio
 
 ## Conclusion
 
-The  *implied licence* of Brazilian law-documents is equivalent to [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode),  with an optional special clause, like an attribution clause, enforcing the use of the red phrase in the distributed copies. The licence family is `cc0-*`.
+The  *implied licence* of Brazilian law-documents is equivalent to [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode),  with an optional special clause, like an attribution clause, enforcing the use of the red phrase in the distributed copies. The licence family is [`cc0-*`](https://github.com/ppKrauss/licenses/blob/master/data/families.csv).
 
 ### Endorsed the conclusion
 The persons bellow endorsed the conclusions of this report (`endorsed_n`),
