@@ -87,7 +87,7 @@ So, we can infer  that it is an license clause, an exigence for  the reproductio
 
 ## Conclusion
 
-The default *"inferred license"* of Brazilian law-documents is something similar to [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode),  with an special clause, like an attribution clause, enforcing the use of the red phrase in the distributed copies.
+The  *implied licence* of Brazilian law-documents is something similar to [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode),  with an special clause, like an attribution clause, enforcing the use of the red phrase in the distributed copies.
 
 ### Endorsed the conclusion
 The persons bellow endorsed the conclusions of this report (`endorsed_n`),
