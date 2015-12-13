@@ -1,6 +1,6 @@
 ---
 title: Inferred license for Brazilian legislation
-version: 1.1
+version: 1.2
 version_status: REVISION
 endorsed_n: 1
 endorsed_status: waiting
@@ -17,8 +17,11 @@ Checklist, from [lawDocsRepos](https://github.com/ppKrauss/openCitation/blob/mas
 
  * Official law-documents repository: http://www.lexml.gov.br
 
+ * Exceptions in the repository public access: *no*
 
 ## Evidences
+
+The evidences listed below are about intellectual property, reuse or copy restrictions, of typical documents of the repository. Is supposed that the repository have no exceptions, offering only documents that are [not classified](https://en.wikipedia.org/wiki/Classified_information).  The evidences subsides the inference of  an [implied licence](https://en.wikipedia.org/wiki/Implied_license), that will be adopted  in the repository's documents that not express a [public copyright license](https://en.wikipedia.org/wiki/Public_copyright_license) in itself.
 
 Label  | Subject | Name and oficial URL | Effective date
 ---    | ---     | ---                  | ---
@@ -26,7 +29,7 @@ Label  | Subject | Name and oficial URL | Effective date
 *CF1988*  | Constitution | [Constituição Federal de 05/10/1988](http://www.lexml.gov.br/urn/urn:lex:br:federal:constituicao:1988-10-05;1988) | 1988-10-05
 *Lei9610* | copyright | [Lei Federal nº 9.610 de 19/02/1998](http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:1998-02-19;9610)| 1998-06-19
 
-## Extracts and interpretations
+Quotations and interpretations of the evidences:
 
 **1.** Official response to the  [*Article 2.4*](http://www.wipo.int/wipolex/en/treaties/text.jsp?file_id=283698#P89_12211) of the [Berne Convention](https://en.wikipedia.org/wiki/Berne_Convention), to give or not *protection to official texts*:
 
@@ -88,7 +91,7 @@ The default *"inferred license"* of Brazilian law-documents is something similar
 
 ### Endorsed the conclusion
 The persons bellow endorsed the conclusions of this report (`endorsed_n`),
-* [ppKrauss](https://github.com/ppKrauss) v1.1, v1.0.
+* [ppKrauss](https://github.com/ppKrauss) v1.2, v1.1, v1.0.
 
 Persons that endorsed indirectly, or endorsed some version or some part, as theirs manifestation was used during elaboration of this report,
 * [bluechi](https://github.com/bluechi) v1.0 with [[1]](https://github.com/okfn/opendefinition/issues/114#issuecomment-122265499).
