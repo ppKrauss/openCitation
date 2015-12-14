@@ -16,9 +16,9 @@ For draft presentation, see [README.old.md](_olds/README.old.md).
 
 Shared datasheet with friendly interface to edit CSV sources:
 
- * [openCoherenceDataset-licenses](https://docs.google.com/spreadsheets/d/17RwlPayXj2IBIBszp4wKMdK7OwwPqX125WmF3XFzM0A/edit?usp=sharing)
+ *  [repos, docs and citation tables](https://docs.google.com/spreadsheets/d/1HrMi0qWjvnEjX3kRD_1o4DJ8U4P7EBv1tx8Euw09K80/edit#gid=1763993748)
 
- * [openCoherenceDataset-repos](https://docs.google.com/spreadsheets/d/1HrMi0qWjvnEjX3kRD_1o4DJ8U4P7EBv1tx8Euw09K80/edit?usp=sharing)
+ *  [samples, default Licences](https://docs.google.com/spreadsheets/d/1tPivl_7ba710qXagA5tJTyxto8HLHXfEdqC_0hgsGs8/edit#gid=1998730446)  of doc's authorities.
 
 These curated data are transferred to here as [CSV+JSON](http://data.okfn.org/doc/tabular-data-package) files, and handled as SQL (and SQL+JSON) related tables, as implmented by [`ini.sql`](src/ini.sql) and illustrated below.  
 

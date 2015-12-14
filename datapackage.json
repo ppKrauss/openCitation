@@ -22,47 +22,53 @@
       "schema": {
         "fields": [
           {
-            "name": "country",
+            "name": "doc_id",
             "role": "master",
-            "description":"ISO's 2 letter alpha-2 code",
+            "description":"Internal ID (used in joins)",
+            "type": "integer"
+          },																	
+          {
+            "name": "doc_authority",
+            "role": "master",
+            "description":"ISO's 2 letter alpha-2 code with optional IDs of document's local authority",
             "type": "string"
           },
           {
-            "name": "doc-type",
+            "name": "doc_type",
             "role": "master",
             "description":"Label for autorithy and document type, as expressed in the document or its URN or its ID",
             "type": "string"
           },
           {
-            "name": "doc-year",
+            "name": "doc_year",
             "role": "master",
             "description":"Year of the first official publication (as expressed in the document or URN)",
             "type": "string"
           },
           {
-            "name": "doc-code",
+            "name": "doc_code",
             "role": "master",
             "description":"Complements for unique identification, as expressed in the document or its URN or its ID",
             "type": "string"
           },
           {
-            "name": "license",
+            "name": "doc_license",
             "description":"key (abbrev name) of the explicit or inferred license",
             "type": "string"
           },
           {
-            "name": "licenseMode",
-            "description":"mode of license expression in the document, implicit or explicit",
-            "type": "string"
-          },
-          {
-            "name": "url-html",
+            "name": "doc_url",
             "description":"URL of the official HTML version of the document",
             "type": "string"
           },
           {
-            "name": "url-pdf",
-            "description":"URL of the official PDF version of the document",
+            "name": "doc_url2",
+            "description":"secondary URL of the document, ex. PDF",
+            "type": "string"
+          },
+          {
+            "name": "doc_url3",
+            "description":"secondary URL of the document, ex. XML ",
             "type": "string"
           }
 	]
