@@ -18,7 +18,7 @@ The characterization of the "openness" of a document (or a set of documents as c
 2. check the most similar canonical-license-type (the CC-types illustred below);
 3. use the `opennessDegree` as "openness numeric indicator".
 
-![The opennes degree](./reports/imgs/openessDeg-CC-licenses-short.png "The opennes degree")
+![The opennes degree](https://raw.githubusercontent.com/ppKrauss/licenses/master/reports/img/openessDegree-licenses.png)
 
 The *openness degree* is illustred here by the [CC licenses ordering](https://commons.wikimedia.org/wiki/File:Ordering_of_Creative_Commons_licenses_from_most_to_least_open.png), but it can be enhanced with more canonical licenses, taken from [OpenDefinition-conformant licenses](http://opendefinition.org/licenses/). The ranking have some affinity with a simplification of the [D. A. Wheeler](http://www.dwheeler.com/essays/floss-license-slide.html)'s compatibility graph, but "legal compatibility" can be lost in the simplification, the scope of openness is only "access compatibility".
 
@@ -92,7 +92,7 @@ The aim of this project is to offer a practical and theoretical *framework* (at 
 * *Citation coherence*: registering evidences in *`lawDocExceptions` dataset*. The aim is also to offer tools and datasets for describe open contents with certainty of openness at cited documents, and tools for measure of percentage of cited materials that are open, in contexts without this certainty.
 
 ### Applications
-The concepts, [report conclusions](https://github.com/ppKrauss/openCoherence/tree/master/reports) and [datasets](https://github.com/ppKrauss/openCoherence/tree/master/data) present in this project can be used in many contexts and applications... Some of them:
+The concepts, [report conclusions](https://github.com/ppKrauss/licenses/blob/master/reports) and [datasets](https://github.com/ppKrauss/openCoherence/tree/master/data) present in this project can be used in many contexts and applications... Some of them:
 * Taxonomy of repositorires (for "openness census");
 * Compare openness of documents, collections or repositories;
 * Calculate "openness indexes";
@@ -114,7 +114,7 @@ Each contry that not have an explicit *official license* defined for its law-doc
 
 Report summary:
 
-* [`inferredLicense-BR`](./reports/inferredLicense-BR.md) - Inferred licenses for Brazilian legislation and its law-documents.
+* [`inferredLicense-BR`](https://github.com/ppKrauss/licenses/blob/master/reports/implied-lex-BR-v1.md) - Inferred licenses for Brazilian legislation and its law-documents.
 * ... please navigate and check where you can collaborate ...
 
 ### Methodology
@@ -150,6 +150,6 @@ After `lawDocsRepos` and `lawDocs` sheets  are filled, and  demand on a *inferre
 
 * This project must be not confused with *"open citation"* of bibliographic references, https://opencitations.wordpress.com/
 
-* The linceses in the [reports](./reports) folder, expressed in the `inferredLicense-XX.md` files, **are "fake licenses"**, the objective of this project is not to offer a proposal of license, is only to characterise repositories and subsidiase a *taxonomy* (of openness) of these repositories. 
+* The linceses in the [reports](https://github.com/ppKrauss/licenses/tree/master/reports) folder, expressed in the `inferredLicense-XX.md` files, **are "fake licenses"**, the objective of this project is not to offer a proposal of license, is only to characterise repositories and subsidiase a *taxonomy* (of openness) of these repositories. 
 
 
