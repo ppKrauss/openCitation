@@ -64,5 +64,7 @@ Check by SQL query... Examples:
  FROM oc.docs WHERE kx->>'license_url'='';
 ```
 
+## See also
 
-
+* [ppKrauss/licenses](https://github.com/ppKrauss/licenses), a complementar project.
+* in-progress reports at [cienciaAberta2015](http://www.cienciaaberta.net/encontro2015/) an [opencon2015 satellite event](http://www.opencon2015.org/satellite)
