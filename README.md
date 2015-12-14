@@ -22,7 +22,7 @@ Shared datasheet with friendly interface to edit CSV sources:
 
 These curated data are transferred to here as [CSV+JSON](http://data.okfn.org/doc/tabular-data-package) files, and handled as SQL (and SQL+JSON) related tables, as implmented by [`ini.sql`](src/ini.sql) and illustrated below.  
 
-![SQL table illustration](_docs/sql_tables.png)
+![SQL table illustration](_docs/img/sql_tables.png)
 
 ## Install
 
