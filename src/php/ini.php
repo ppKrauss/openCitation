@@ -15,6 +15,8 @@ $projects = [
 	'openCoherence'=>   '/home/peter/gits/openCoherence'
 ];
 
+// include 'doaj_get.php';  // for check openness degree of citations in sciDocs. 
+
 
 // // // // //
 // SQL PREPARE
@@ -79,7 +81,7 @@ foreach($items as $prj=>$r)
    foreach ($r as $dataset) {
 	$folder = $projects[$prj];
 	$sql = array_shift($dataset);
-	print "\n\n---- PRJ $prj (($sql))";
+	print "\n\n---- PRJ $prj {{ $sql }}";
 	$stmt = $db->prepare($sql);
 	$jpack = json_decode( file_get_contents("$folder/datapackage.json"), true );
 	$ds = array(); // only for "bind check".
