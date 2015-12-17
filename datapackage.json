@@ -22,9 +22,9 @@
       "schema": {
         "fields": [
           {
-            "name": "doc_id",
+            "name": "tmp_id",
             "role": "master",
-            "description":"Internal ID (used in joins)",
+            "description":"Temporary internal ID for eventual relationship with citationCases file of the same dataset repo",
             "type": "integer"
           },																	
           {
@@ -57,7 +57,7 @@
             "type": "string"
           },
           {
-            "name": "doc_url",
+            "name": "doc_url_repo",
             "description":"URL of the official HTML version of the document",
             "type": "string"
           },
@@ -72,6 +72,52 @@
             "type": "string"
           }
 	]
+      }
+    },
+    {
+      "name": "Doc's citation cases, law",
+      "path": "data/lawDocs-citationCases.csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "tmp_id",
+            "role": "master",
+            "description":"document's ID. Temporary ID for import session, see lawDocs file.",
+            "type": "integer"
+          },																			
+          {
+            "name": "citObj_theme",
+            "role": "master",
+            "description":"Theme (key) of the citation",
+            "type": "string"
+          },
+          {
+            "name": "citObj_rule",
+            "description":"rule of the citation, voluntary/obligation/other",
+            "type": "integer"
+          },
+          {
+            "name": "citObj_isOpen",
+            "description":"the cited object is free/open or not",
+            "type": "boolean"
+          },
+          {
+            "name": "cit_mechanism",
+            "description":"citation mechanism used in the quoted citation",
+            "type": "string"
+          },
+          {
+            "name": "cit_quotations",
+            "description":"Quotations of the citations",
+            "type": "string"
+          },
+          {
+            "name": "notes",
+            "description":"optional notes about the citation",
+            "type": "string"
+          }
+        ]
       }
     },
     {

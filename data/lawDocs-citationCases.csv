@@ -1,8 +1,8 @@
-doc_id,citObj_theme,citObj_rule,citObj_isOpen,cit_mechanism,cit_quotations,notes
+tmp_id,citObj_theme,citObj_rule,citObj_isOpen,cit_mechanism,cit_quotations,notes
 3,?,obligation,yes,copy-attach,apensa por cópia ao presente Decreto,bom exemplo
 5,ABNT,obligation,no,cite-class,normas técnicas de acessibilidade da Associação Brasileira de Normas Técnicas – ABNT,verificar termo-de-ajustamento-de-conduta
 6,CEP,obligation,no,cite-label,CEP,"ANEXO I, campos 4.7, 6.7, 7.7, 8.7; ANEXO III, campos 1.7 e 2.7 no modelos I e II; ANEXO IV, campos 1.7, 2.7 e 3.7; ANEXO V, campos 1.8 e 1.13"
-4,?,voluntary,yes,copy-attach,apensos por cópia ao presente Decreto,bom exemplo
+4,??,voluntary,yes,copy-attach,apensos por cópia ao presente Decreto,bom exemplo
 9,ABNT,obligation,no,vague,normas de acessibilidade,verificar termo-de-ajustamento-de-conduta
 11,ABNT,obligation,no,vague,padrões de acessibilidade estabelecidos (...) nas normas técnicas brasileiras,todavia expressa regras técnicas detalhadas
 10,CEP,obligation,no,cite-label,CEP,"modelo anexo, campo de formulário"

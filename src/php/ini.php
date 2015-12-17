@@ -43,24 +43,34 @@ $items = [
 			'sciRepos.csv', 'lawRepos.csv'
 		)
 		,array("SELECT oc.docs_upsert(
-			'lex:'||:country, NULL, (:doc_type||':'||:doc_year||':'||:doc_code)::text, NULL::xml, :json_info::JSON
+			  'lex:'||substring(:doc_authority from 1 for 2), NULL, 
+			  (:doc_type||':'||:doc_year||':'||:doc_code)::text, 
+			  NULL::xml, :json_info::JSON,
+			  :tmp_id::int, 1
 			)",
 			'lawDocs.csv::bind','samples'
 		)
+		,array("INSERT INTO oc.cited_objs(doc_id,citObj_theme,cited_info) 
+		              VALUES (oc.docs_tmp2real(:tmp_id::int), :citObj_theme, :cited_info::JSON)",
+			'lawDocs-citationCases.csv'
+		)
 	]
 ];
-$sql_delete = '
+
+$sql_delete = ' -- prepare to full refresh of oc.scheme
+	DELETE FROM oc.docs_tmp_relations WHERE session_id=1;
 	DELETE FROM oc.cached_xpaths;
-	DELETE FROM oc.licenses;
-	DELETE FROM oc.license_families;
+	DELETE FROM oc.cited_objs;
 	DELETE FROM oc.docs;
 	DELETE FROM oc.repositories;
+	DELETE FROM oc.licenses;
+	DELETE FROM oc.license_families;
 ';
 
 // // //
 // INITS:
 $db = new pdo($dsn,$PG_USER,$PG_PW);
-$stmt = $db->exec($sql_delete); 
+$stmt = $db->exec($sql_delete);
 
 $SEP = ',';
 $nmax = 0;   // 0 or debug with ex. 10
@@ -149,6 +159,8 @@ function fields_to_parts($fields,$only_names=true) {
 
 
 function intoDb_XMLs($pasta,$db,$repo_name,$n_limit=0,$verbose=0) {
+	if (!is_dir($pasta)) 
+		return;
 	print "\n\n\t --- scanning folder ($pasta) of $repo_name ---\n";
 	$rgx_doctype = '/\s*<!DOCTYPE\s([^>]+)>/s';  // needs ^
 	$stmt = $db->prepare( "SELECT oc.docs_upsert('$repo_name',:dtd::text,:pid::text,:xcontent::xml,NULL::JSON)" );
@@ -176,6 +188,7 @@ function intoDb_XMLs($pasta,$db,$repo_name,$n_limit=0,$verbose=0) {
 		} //else $n2++;
 	  } // scan xml files
 	print "\n$n XML docs of '$repo_name' inserted\n\n";
+	return;
 } // func
 
 ?>

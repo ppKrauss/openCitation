@@ -14,7 +14,6 @@ CREATE SCHEMA oc;
 --  Refresh with DROP SCHEMA oc CASCADE; and redo this file without final "global util functions"
 -- -- -- -- 
 
-
 CREATE TABLE oc.license_families(
 --
 -- Licence families.
@@ -80,7 +79,7 @@ CREATE TABLE oc.dtds (
 
 CREATE TABLE oc.docs (   
 --
--- Temporary, for analysis or requests from datasets
+-- For evidences or temporary, for analysis or requests from datasets
 --   see ex. https://github.com/ppKrauss/openCoherence/blob/master/data/lawDocs.csv
 --
   id serial PRIMARY KEY,
@@ -94,6 +93,29 @@ CREATE TABLE oc.docs (
   UNIQUE (repos_pid)
 );
 
+
+CREATE TABLE oc.cited_objs (
+--
+-- Cited .
+--
+  id serial PRIMARY KEY,
+  doc_id int  REFERENCES oc.docs(id),
+  citObj_theme varchar(120),
+  cited_info JSON NOT NULL, -- citObj_rule,citObj_isOpen,cit_mechanism,cit_quotations,notes
+  UNIQUE (doc_id,citObj_theme)
+);
+
+CREATE TABLE oc.docs_tmp_relations (
+	-- for cited_objs controlled insertions
+	session_id int NOT NULL DEFAULT 1,
+	tmp_id int NOT NULL,
+	real_id int  REFERENCES oc.docs(id),
+	UNIQUE (session_id,tmp_id)
+);
+
+
+-- FALTA tb rever datapackage! geral...
+-- ... review docs and
 
 -- -- --
 -- COMPLEMENTS
@@ -117,6 +139,12 @@ CREATE TABLE oc.cached_xpaths (
   UNIQUE(jkey_group,xpath_str,dtds),
   CHECK(oc.dtds_check_fks(dtds)=array_length(dtds,1))
 );
+
+CREATE OR REPLACE FUNCTION oc.docs_tmp2real(p_tmp_id int, p_session int DEFAULT 1) RETURNS int AS $$
+	SELECT real_id
+	FROM oc.docs_tmp_relations
+	WHERE tmp_id=$1 AND session_id=$2
+$$ LANGUAGE sql;
 
 
 CREATE OR REPLACE FUNCTION oc.docs_getmetada(p_dtd int, p_xcontent xml, p_kxgroup int DEFAULT 1) RETURNS JSON AS $$
@@ -205,8 +233,15 @@ END;
 $$ LANGUAGE plpgsql;
 
 
-CREATE OR REPLACE FUNCTION oc.docs_upsert(p_repo text, p_dtd text, p_repos_pid text, p_xcontent xml, p_info JSON)
-RETURNS integer AS $$
+CREATE OR REPLACE FUNCTION oc.docs_upsert(
+	p_repo text, 		-- see oc.repositories.repo_label.
+	p_dtd text,   		-- see oc.dtds (dtd_label OR dtd_doctype_string).
+	p_repos_pid text, 	--  repository's public ID, see oc.docs.repos_pid.
+	p_xcontent xml DEFAULT NULL, 	-- see oc.docs.xcontent
+	p_info JSON DEFAULT NULL,	-- see oc.docs.info
+	p_tmp_id int DEFAULT NULL,	-- optional, see oc.docs_tmp_relations
+	p_tmp_session int DEFAULT 1  	-- optional (even when p_tmp_id not null), idem.
+) RETURNS integer AS $$
 DECLARE
   q_dtd_id int DEFAULT NULL;
   q_id  int;  -- or bigint?
@@ -214,27 +249,35 @@ DECLARE
 BEGIN
 	SELECT repo_id INTO q_repo_id 
 	FROM oc.repositories WHERE  p_repo=repo_label;
+	IF q_repo_id IS NULL THEN
+		RAISE EXCEPTION 'REPO-id not found. Check repo(%)',p_repo;
+	END IF;
 	IF (p_dtd IS NOT NULL AND trim(p_dtd)>'') THEN
 		SELECT dtd_id INTO q_dtd_id 
 		FROM oc.dtds WHERE p_dtd=dtd_label OR p_dtd=dtd_doctype_string;
-		IF q_dtd_id is NULL OR q_repo_id IS NULL THEN
-			RAISE EXCEPTION 'DTD-id OR REPO-id not found. Check dtd(%) and repo(%)',p_dtd,p_repo;
+		IF q_dtd_id is NULL THEN
+			RAISE EXCEPTION 'DTD-id OR REPO-id not found. Check dtd(%)',p_dtd;
 		END IF;
 	END IF;
-	SELECT id INTO q_id FROM oc.docs WHERE repos_pid = p_repos_pid;
+	SELECT id INTO q_id FROM oc.docs WHERE repo=q_repo_id AND repos_pid = p_repos_pid;
 	IF q_id IS NOT NULL THEN -- UPDATE
-		UPDATE oc.docs 
+		UPDATE oc.docs
 		SET 	repo=q_repo_id, dtd=q_dtd_id, xcontent=p_xcontent, info=p_info, 
 			kx=oc.docs_getmetada(q_dtd_id,p_xcontent), info_modified=now()
 		WHERE id = q_id;
 	ELSE -- INSERT
 		INSERT INTO oc.docs (repos_pid, repo, dtd, xcontent, info, kx) 
-		VALUES (p_repos_pid,q_repo_id, q_dtd_id, p_xcontent, p_info, oc.docs_getmetada(q_dtd_id,p_xcontent))
+		VALUES (p_repos_pid, q_repo_id, q_dtd_id, p_xcontent, p_info, oc.docs_getmetada(q_dtd_id,p_xcontent))
 		RETURNING id INTO q_id;
+	END IF;
+	IF p_tmp_id IS NOT NULL AND p_tmp_id>0 AND q_id>0 THEN -- TMP SESSION
+		INSERT INTO oc.docs_tmp_relations ( session_id, tmp_id, real_id)
+		VALUES (p_tmp_session, p_tmp_id, q_id);
 	END IF;
 	RETURN q_id;
 END;
 $$ LANGUAGE plpgsql;
+
 
 
 CREATE OR REPLACE FUNCTION oc.cached_xpaths_upsert(
