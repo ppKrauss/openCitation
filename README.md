@@ -20,7 +20,11 @@ Shared datasheet with friendly interface to edit CSV sources:
 
  *  [samples, default Licences](https://docs.google.com/spreadsheets/d/1tPivl_7ba710qXagA5tJTyxto8HLHXfEdqC_0hgsGs8/edit#gid=1998730446)  of doc's authorities.
 
-These curated data are transferred to here as [CSV+JSON](http://data.okfn.org/doc/tabular-data-package) files, and handled as SQL (and SQL+JSON) related tables, as implmented by [`ini.sql`](src/ini.sql) and illustrated below.  
+These curated data are transferred to here as [CSV+JSON](http://data.okfn.org/doc/tabular-data-package) files, and interpreted with following UML-class,
+
+![SQL table illustration](_docs/img/uml_tables.png)
+
+The SQL implementation (SQL+JSON tables) is prepared by [`ini.sql`](src/ini.sql), and can be summarized by the E-R diagram below.
 
 ![SQL table illustration](_docs/img/sql_tables.png)
 
